@@ -1,0 +1,135 @@
+\section{single scatterer}
+
+We derive the matrix for a single scatter in a quasi-1D channel of height w (where y goes from 0 to w) and the defect is at x = 0. The incident amplitude is A, reflection is B, and transmission is C.  These are later normalized to 1, r, and t, respectively.
+
+For simplicity we assume there are two open channels (N=2) and two closed channels ($N_c$=2) and that the incident light is only in channel 2. The algorithm can be duplicated for any arbitrary open channel. It doesn't make sense to say the incident light is in the closed channel since those are not propagating modes. The algorithm show works for arbitrary number of open and closed channels. We show that closed channels can be ``folded'' into the open channels, which maintains conservation of information. The rank of the matrix is reduce from $N+N_c$ to N but the terms become messier.
+
+Method for matrix setup: match boundary conditions for the amplitude and derivative at the scatterer.
+% see Ben's notes, 20080617
+The general equation describing the system is
+\begin{equation}
+A_2 \chi_2(y) \exp(i k_2 x) + \sum_{n=1}^4 B_n \chi_n(y) \exp(-i k_n x) = 
+\sum_{n=1}^4 C_n \chi_n(y) \exp(i k_n x)
+\label{singlescattererwave}
+\end{equation}
+where if $n>N$, then $k_n = i \kappa_n$.
+
+Boundary condition: amplitudes match at x = 0. For each channel, multiply both sides by
+\begin{equation}
+\int dy \chi_m(y)
+\end{equation}
+which by orthogonality with $\chi_n(y)$ yields $\delta_{nm}$, so at x=0,
+\begin{equation}
+\begin{gathered}
+B_1 = C_1 \\
+A_2 + B_2 = C_2 \\
+B_3 = C_3 \\
+B_4 = C_4
+\end{gathered}
+\end{equation}
+
+In order to have the derivatives match we detour to the Schr\"{o}dinger equation:
+
+\begin{equation}
+(-\frac{\hbar^2}{2 m}(\frac{d^2}{dx^2}+\frac{d^2}{dy^2})+\gamma \delta(x)\delta(y-y_o))\Psi = E \Psi
+\end{equation}
+(equation 1 in \cite{1990_Bagwell}).
+
+separation of variables:
+\begin{equation}
+\Psi = \sum_n D_n(x) \chi_n(y)
+\end{equation}
+
+\begin{equation}
+-\frac{\hbar^2}{2 m} \frac{d^2}{dy^2} \chi_n(y) = E_n \chi_n(y)
+\end{equation}
+
+boundary condition: $\chi_n(y)$ = 0 for y = 0 and y = w.
+
+\begin{equation}
+\begin{gathered}
+\chi_n(y) = \sqrt{\frac{2}{w}sin(\frac{n \pi}{w}y} \\
+E_n = \frac{\hbar^2}{2 m}(\frac{n \pi^2}{w})^2
+\end{gathered}
+\end{equation}
+
+\begin{equation}
+-\frac{\hbar^2}{2 m}\sum_m D_m^{''}(x) \chi_m(y) + 
+\sum_m D_m(x) E_m \chi_m(y) + 
+\gamma \delta(x) \sum_m D_m(x) \chi_m(y) \delta(y-y_o) = 
+E_{total} \sum_m D_m(x) \chi_m(y)
+\end{equation}
+where $E_m \chi_m(y)$ = $\chi_m^{''}(y)$. Multiply both sides by 
+$\int dy \chi_n(y)$ to get $\delta_{mn}$ which leads to 
+\begin{equation}
+-\frac{\hbar^2}{2 m} D_n^{''}(x) +D_n(x) E_n +
+\delta(x) \sum_m D_m(x) \gamma \chi_n(y_o) \chi_m(y_o) = D_n(x) E
+\end{equation}
+re-arranging, we get Bagwell's equation 4,
+\begin{equation}
+\frac{d^2}{dx^2}D_n(x) + (\frac{E-E_n}{\hbar^2})D_n = 
+\delta(x) \sum_m D_m(x) \Gamma_{nm}
+\label{Bagwellsequ4}
+\end{equation}
+where
+\begin{equation}
+\begin{gathered}
+k_n^2 = \frac{E-E_n}{\hbar^2}2 m \\
+\Gamma_{nm} = \chi_n(y_o) \chi_m(y_o)
+\end{gathered}
+\end{equation}
+Now we can match derivatives at x=0. Integrate over a small region, applying
+\begin{equation}
+\int_{0-\epsilon}^{0+\epsilon}dx
+\end{equation}
+to equation \ref{Bagwellsequ4}
+
+\begin{equation}
+\frac{dD_n}{dx}|^{+\epsilon}_{-\epsilon} + k_n^2 D_n 2 \epsilon = 
+\sum_m D_m(0) \Gamma_{nm}
+\end{equation}
+which is Bagwell's equation 18. Now let $\epsilon \rightarrow$ 0
+\begin{equation}
+\frac{dD_n(+)}{dx} - \frac{dD_n(-)}{dx} = \sum_m^4 D_m(0) \Gamma_{nm}
+\end{equation}
+Where $D_{n}(+)$ is the derivative of the wave function x component on the left side of the scatterer, and similarly $D_{n}(+)$ is on the right side of the scatterer. Apply to equation \ref{singlescattererwave}
+\begin{equation}
+i k_n C_n - (i k_2 A_2 \delta_{2 n} - i k_n B_n) = 
+\sum_{m=1}^4 C_m \Gamma_{nm}
+\end{equation}
+from the fist set of boundary conditions, $B_1=C_1$, $A_2+B_2=C_2$, $B_3=C_3$, $B_4=C_4$, thus $B_2=C_2-A_2$
+
+For channels 1,3, and 4 =n
+\begin{equation}
+2 i k_n C_n = \sum_{m=1}^4 C_m \Gamma_{nm}
+\end{equation}
+and for channel 2,
+\begin{equation}
+\begin{gathered}
+i k_2 (C_2 - A_2 +B_2) = i k_2 (C_2 -A_2 + (C_2 - A_2)) = 2 i k_2 (C_2 -A_2) = \sum C_m \Gamma_{2m} \\
+-2 i k_2 A_2 = (\sum_m C_m \Gamma_{2m}) - 2 i k_2 C_2 \\
+-2 i k_2 = (\sum_m (\frac{C_m}{A_2}) \Gamma_{2m}) - 2 i k_2 \frac{C_2}{A_2}
+\end{gathered}
+\end{equation}
+Define $C_m/A_2$ as transmission $t_{2m}$ so that coefficients are normalized to incident unity. [Note: 1 with respect to each channel, so that if there are 2 input channels the incidence is actually 2 (?)]
+
+The four sums can be written as a matrix
+\begin{equation}
+ \left( \begin{array}{c}
+0 \\
+-2 i k_2 \\
+0 \\
+0  \end{array} \right) =
+ \left( \begin{array}{cccc}
+\Gamma_{11}-2 i k_1 & \Gamma_{12}         & \Gamma_{13}              & \Gamma_{14} \\
+\Gamma_{21}         & \Gamma_{22}-2 i k_2 & \Gamma_{23}              & \Gamma_{24} \\
+\Gamma_{31}         & \Gamma_{32}         & \Gamma_{33}+2 i \kappa_3 & \Gamma_{34} \\
+\Gamma_{41}         & \Gamma_{42}         & \Gamma_{43}              & \Gamma_{44}+2 i \kappa_4 \end{array} \right)
+ \left( \begin{array}{c}
+t_21 \\
+t_22 \\
+t_23 \\
+t_24 \end{array} \right) 
+\end{equation}
+
+Where the left side vector is the input, and the right side matrix are the transmission coefficients. Note that there were two (open) input channels, which correspond to the upper 2 elements, and the lower elements correspond to the closed channels, which can not be inputs.

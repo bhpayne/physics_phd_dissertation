@@ -1,0 +1,308 @@
+
+20120316
+*********
+
+Dear Dr Tauritz,
+
+Prior to our meeting this morning I met with Dr Singler in the math department. He serves on the ITCC committee and the lack of dissertation template is now an item for discussion at the April ITCC meeting.
+
+Would it be useful for your committee being formed to work with ITCC?
+
+As I understand the situation, the concerned parties are
+-Office of Graduate Studies, specifically Dr Allada, Vicki Hudgins, Roberta Cox, and Sharon Matson
+-Library staff: Roger Weaver, Maggie Trish, possibly Becky Merrel
+-ITCC?
+-Graduate advisors who have individual templates: Dr Tauritz, Dr Homan,
+-Graduate advisors who are interested in having a template: Dr Vojta, Dr Yamilov, Dr Parris, Dr Gosavi, Dr Jag, Dr Singler
+-Graduate students. Possibly represented by Council of Graduate Students, i.e. Ben Payne
+
+Is there anyone I'm missing?
+
+I think it is probably important to distinguish the issues:
+-establishing/changing the dissertation standard
+-making a standard template available as an example; hosted by Office
+of Graduate Studies (the "official" copy)
+-moving towards electronic copies of the dissertation
+
+While each of these ideas are useful, entangling them is not.
+
+Ben
+
+***************
+
+Hi Ben,
+
+It's not clear to me why this is an appropriate issue for ITCC. The
+number of stakeholders as you so eloquently list is getting awfully
+large as it is, so adding additional parties that are not directly
+involved seems like a bad idea. I suggest this item gets withdrawn from
+the April ITCC agenda and instead I'll talk to Dr. Allada about
+involving the stakeholders you list in the standard setting process.
+Once the standard has been established, a standard LaTeX template should
+indeed be posted on the OGS website.
+
+As for moving towards electronic copies of theses and dissertations,
+earlier today I sent a formal letter to Dr. Allada requesting OGS to
+propose to the Graduate Faculty to add a digital only thesis archival
+option. However, as you correctly point out, this is a separate issue
+and should not be entangled with the issue of setting a new standard and
+getting a corresponding LaTeX template posted.
+
+Cheers,
+Dr. T
+
+
+
+20120316
+*********
+
+Meeting with Goldman, Altynbek, and Dr Tauritz
+
+Dr Tauritz has met with Dr Allada and Roberta Cox. Both of them want a new standard.
+
+Dr Tauritz is interested in allowing electronic-only submission.
+
+Dr Allada is interested in hiring someone to maintain the Latex sty file.
+Dr Allada has asked Dr Tauritz to gather a committee to discuss this idea.
+
+Dr Tauritz suggests we could present this standard to the committee. 
+
+Dr Tauritz says not to post the template to the Office of Grad Studies site until he gives the go ahead.
+
+Dr Tauritz will not be on campus during spring break.
+
+Dr Tauritz does not agree with Goldman and Ben on the following:
+Should the detailed rules determine the Latex style file, or should the Latex style file set the rules?
+Dr Tauritz thinks the rules must be made explicit (do not just present the Latex style file as an example)
+
+20120316
+********
+
+People in Math: 
+Martin Bohner, room 106. Doesn't need one, doesn't have one
+Elvan Akin-Bohner, room 310
+Roman Dwilewicz, room 104. Office hours MWF 11am-noon
+Xiaoming He, room 115. Office hours MWF 1pm-3pm
+Matt Insall, room 315. Office hours MW 10-11am
+John Singler, room 312. Met 20120316. Doesn't have a template but would like one. On ITCC
+
+
+ITCC open forum 1-4pm.
+
+
+notes from meeting with Vicki and Sharon Matson 20120315
+********************************************************
+
+The dissertation consistency requirement is from the Graduate Faculty Council.
+
+Vicki and Sharon would be happy to get rid of the publication option
+
+Vicki and Sharon said they will post my template once it is in compliance and official
+
+notes from meeting with Roger Weaver 20120315
+*********************************************
+
+Roger Weaver at the library is willing to help OGS
+
+For the library scanning to microfiche, there is no margin requirement. No requirement about limiting use of bold/italics. Font size doesn't matter. Library doesn't care about consistency (it is not mandatory).
+
+Do use common fonts since Optical Character recognition is used on the scanned documents. Common fonts are the following: Courier, Helvitica, Times New Roman, and Arial.
+
+Do produce a professional looking document. 
+
+For printed bound copies destined for the library, use acid free and the OGS-determined paper weight.
+
+Currently the scholar mine upload of PDFs is optional and printing/scanning is mandatory. Roger Weaver is advocating moving to PDF only and no bound copies. That change is not implemented yet.
+
+Q: What is the use of latex versus MS Word at peer institutions?
+Q: How many grad students would like to use Latex for their dissertations?
+Q: How many advisors would like to use Latex for their dissertations?
+
+
+sent 20120315
+
+Hello. For our meeting tomorrow Computer Science 213 at 10am on
+Friday) and for everyone not coming, here is an update on the status
+of the MS&T Latex template.
+
+
+First, the people I've been talking to:
+
+At the Office of Graduate Studies (OGS), my primary contacts are Vicki
+Hudgins and Sharon Matson. I am planning on talking to Dr. Allada, but
+have not met with him yet. [Dr. Newkirk is possibly also involved, but
+he has not responded yet.]  Dr Allada and Dr Newkirk are the people to
+meet with prior to presenting plans to the Graduate Faculty Council.
+
+Professors who have worked on developing Latex .sty files, all
+independent of one another, in no particular order:
+-Dr Tauritz, Computer Science
+-Dr Homan, Mechanical Engineering
+-Dr Gosavi, Engineering Management
+-Dr Vojta, Dr Yamilov; Physics
+I am working on getting in contact with the following professors who
+may have templates:
+-Dr "Jag" Sarangapani, Elec. Comp. Engr. Out of office until April 1
+-Dr Levent Acar, Elec. Comp. Engr. room 220
+-Dr John Singler, Math room 312. Interested in having a template but doesn't have one
+
+Another group of stakeholders is the library staff.  I have been
+working with Roger Weaver (copyright issues), and will be meeting with
+Becky Merrell (binding) on Friday.
+
+All of the people I have met with so far have been extremely
+supportive of the ideas which follow. For the purpose of presenting a
+consistent plan, I would like to keep discussions on this list (rather
+than each of us going individually to the people listed above). My
+intention is to make the review process easier for future graduate
+students by saving time while increasing consistency.
+
+The two actions I am seeking are
+(1) create/change the specifications of the thesis/dissertation for
+increased consistency and then
+(2) create templates demonstrating these standards and make the
+templates available to graduate students.
+
+
+For current thesis/dissertation guidelines, four templates (MS-report,
+MS-publication, PhD-report, and PhD-publication) are needed
+
+http://grad.mst.edu/media/administrative/grad/documents/thesis_guideline_7_09-.docx
+
+http://grad.mst.edu/media/administrative/grad/documents/Dissertation_Guideline_7-09.doc
+
+Both are linked from
+
+http://grad.mst.edu/currentstudents/thesesdissertations/
+
+The current guidelines are equally weighted, when in practice there
+are varying degrees of importance. It would be extremely useful to
+point out to graduate students which rules are necessary, and which
+guidelines can be debated with OGS. I'll use the term "rule" to denote
+a requirement, and "guideline" to indicate a flexible idea.
+
+The rules are derived from the library process of scanning documents
+to microfiche/microfilm and binding.
+-pages must be numbered
+-Table of Contents (ToC) must be consistent with content (i.e., page
+numbers, section labels)
+
+
+Then from the OGS, there are two primary guidelines:
+-consistency within a single thesis/dissertation
+-consistency across all theses/dissertations produced at MS&T
+
+If the above ideas could be conveyed to graduate students, it would
+make the process much more transparent and reduce frustration with
+seemingly arbitrary rules.
+
+All other (more specific) guidelines provided by OGS are arbitrary.
+For example, the following specifications currently given by OGS
+
+-right, top, and bottom margins must be greater than or equal to 1 inch
+-left margin must be greater than or equal to 1.5 inches
+-minimize use of bold and italics
+-figure appears after first reference
+
+are arbitrary and are not required by the library. There is a
+reference book by Turabian, "A Manual for Writers" which is useful in
+this process. I suggest in the MS&T guidelines defaulting all
+guidelines to this source
+
+****************************************
+
+The following are specific change suggestions:
+
+Currently, the Table of Contents (ToC) for the publication option is
+structured as
+
+SECTION
+  1.  Introduction
+       1.1   Asdf Jklm
+       1.2   Qwer Uiop
+PAPERS
+  1.   Scientific Sounding Title goes here
+       1.1 Introduction
+       1.2 Blah Blah
+  2.  Another Great Journal Article
+       1.1  Introduction
+       1.2  More Section
+SECTION
+  2.  Conclusions
+        2.1  More Stuff Here
+        2.2  Finally, the End
+
+
+This structure has the problem that there are multiple "1.1" and
+"1.2"; figures are numbered "1.1" and "1.2" in each paper. To correct
+this, I propose the following ToC:
+
+  1.  Introduction
+       1.1   Asdf Jklm
+       1.2   Qwer Uiop
+  2.   Scientific Sounding Title goes here
+       2.1 Introduction
+       2.2 Blah Blah
+  3.  Another Great Journal Article
+       3.1  Introduction
+       3.2  More Section
+  4.  Conclusions
+        4.1  More Stuff Here
+        4.2  Finally, the End
+
+This is what is currently used for "report" style. Then figures and
+chapters are properly indexed. [Neither the 6th (1996) nor 7th edition
+of Turabian's "A Manual for Writers" specifies the exact structure of the ToC.]
+
+There are two issues with this proposed ToC. The "SECTION" and
+"PAPERS" labels have been removed. Therefore, it makes sense to reduce
+the number of templates from 4 to 2 (just MS and PhD, which would have
+minimal
+differences). Second, the intention of using a publication option is
+to reduce the work of including previously published articles.
+However, in the publishers I have reviewed (APS, IEEE, IOP) authors
+cannot reproduce exact copies of the articles. Some rewrite is
+necessary of the articles due to double spacing and the figure index.
+
+To summarize, I advocate the following:
+revise the Table of Contents, which results in a thesis/dissertation
+which is basically similar for
+publication and report styles. Therefore, just include a page at the
+beginning explaining which chapters are published in which journals
+[also required by publishers of the original articles].
+
+***************************************
+
+Independent of the changes suggested above, I have a few other
+ease-of-formatting issues.
+
+The guidelines from OGS say the figure must occur after it is first
+referenced (and not before). This is not the method used in
+peer-reviewed journal articles, and when using Latex the decision of
+figure placement is not made by the author. Turabian says
+"Illustrations, ..., should be placed as close as possible to their
+first references in the text." (6th edition, page 105). Similar idea
+on page 370 of 7th edition.
+
+For figures which take up a full page, I advocate not requiring the
+figure to be at the top of the page and below the 1" margin.
+
+For figure indices in the publication option, I advocate using the
+same method as the report option. In the current publication ToC this
+is not applicable.
+
+*************************************
+
+What remains to be done:
+
+Find all professors on campus who have developed a .sty, get them
+together on this idea.
+
+Implement a dissertation which exhibits all the features I am
+proposing. Since my dissertation must be submitted April 4, I am
+planning on having it ready by then.
+
+Once a satisfactory template exists, I will be giving the OGS a .sty
+and .pdf template for MS and PhDs. Vicki and Sharon said today
+(20120315) that they would be happy to post this to their OGS website,
+even though neither will support Latex development.

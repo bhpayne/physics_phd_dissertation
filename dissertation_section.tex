@@ -1,0 +1,138 @@
+\documentclass[chap]{mst_thesis}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{comment}
+\usepackage{amsthm}
+\usepackage{subfigure}
+
+% added by Ben
+\usepackage{makeidx}
+\makeindex
+%\usepackage{nomencl}
+%\usepackage[dvips]{graphicx,color}
+%\usepackage{amsmath} % advanced math
+%\usepackage{verbatim} % multi-line comments
+%\usepackage{appendix}
+% see http://www.tug.org/applications/hyperref/manual.html
+\usepackage[breaklinks=true, % allow links to break over lines by making links over multiple lines into PDF links to the same target 
+hyperindex, % Makes the page numbers of index entries into hyperlinks. 
+%backref, 
+%20100111% pagebackref, % Adds backlink text to the end of each item in the bibliography, as a list of page numbers. 
+linktocpage, % make page number, not text, be link on TOC, LOF and LOT 
+colorlinks=false, 
+pdftitle={Dissertation introduction}, 
+pdfauthor={Ben Payne}, 
+pdfsubject={comprehensive exam}, 
+pdfkeywords={exam comprehensive dissertation introduction anderson localization random media gain}]{hyperref}
+\usepackage{glossary}
+\makeglossary  % http://texblog.wordpress.com/2007/11/01/glossary-in-latex/
+
+%\usepackage[left=1.5in,top=1in,right=1.25in,bottom=.3in]{geometry} %For the stupid, stupid margins
+\newcommand {\remline} {\vspace{-12pt}}
+
+% Use the first command below if you want captions over 1 line indented. A side
+% effect of this is to remove the use of bold for captions. To restore bold,
+% also include the second line below.
+%\usepackage[hang]{caption}  
+% change the caption delimiter in caption2.sty from a colon to a period:
+%\renewcommand\captionlabeldelim{.}
+
+\usepackage{hangcaption}
+
+% The following command will specify the correct graphics driver for the
+% graphics routines used with LaTeX.  Possible options include:
+% template, dvips, oztex, textures, dvialw, emtex, dvilaser, psprint,
+% dvipsone, dvi2ps, pctexps, pctex32, pctexwin, pctexhp, pubps,
+% dviwin, dvitops, ln, dvipsnames.
+\ExecuteOptions{textures}
+
+%\includeonly{MSTchap1}  % use \includeonly to process only
+                         % the file(s) listed inside the braces
+                         % separate more than one file with a comma
+% For writing center, need "\doublespacing" and "\large"
+%\doublespacing % worked, insufficient for writing center if font size is unchanged
+%\setstretch{2} % when combined with \large, then spacing is too large
+           
+\begin{document}
+\large % for writing center review
+% Leave the following lines alone:
+\addtocontents{toc}{\hfill Page}%for "Page" at top of TOC 
+\addtocontents{lof}{\noindent Figure \hfill Page}%for the Figures page
+\addtocontents{loa}{\noindent Algorithm \hfill Page}
+\addtocontents{lot}{\noindent Table \hfill Page}%for the Tables page
+\addtocontents{los}{\noindent \protect\makebox[1in][l]{\underline{Symbol}} \underline{Description} \hfill \\}%for the Symbols page 
+
+%%20091214%\include{chapters/title}      % title page material
+
+%%20091214%%\include{chapters/abstract}   % abstract page
+%%20091214%%\include{chapters/acknowledgements}        % acknowledgements page
+%%20091214%%\tableofcontents     % table of contents (automatically generated)
+%%20091214%%\listoffigures       % required if there are figures (automatically generated)
+%\listofalgorithms
+%%20091214%%\listoftables        % required if there are tables (automatically generated)
+%%20091214%%\nomenclature        % required if there are variables (automatically generated
+                     % if you use the \symbol command)
+%\include{chapters/appendix_symbols_used}
+
+% Leave the following line alone:
+\addtocontents{toc}{\parindent0pt\vskip12pt SECTION} %toc entry
+
+% note: each included file should start with \section{X}
+\include{chapters/introduction_draft3}
+% history
+% current passive criteria
+% mention self-embedding
+%%20091214%%\include{chapters/oned}
+% model comparsion, tunneling
+% T/E
+%%20091214%%\include{chapters/quasi1d}
+% closed channels
+% regimes plot
+% criteria
+%%20091214%%\include{chapters/quasi3d}
+%%20091214%%\include{chapters/conclusion}
+
+% Leave the following two lines alone:
+\appendix            % This command is used only once!
+                     % It resets the formatting for the appendices.
+%\let\cleardoublepage\clearpage
+%%20091214%%\include{chapters/appendix_layman_overview}
+%%20091214%%\include{chapters/appendix_1d_transfer_matrix_and_AB_derivation}
+%%20091214%%\include{chapters/appendix_1d_energy_in_one_slab_derivation}
+%%20091214%%\include{chapters/appendix_alpha_beta_convention}
+%%20091214%%\include{chapters/appendix_q1d_single_scatterer_derivation}
+%%20091214%%\include{chapters/appendix_q1d_double_scatterer_derivation}
+%\include{chapters/appendix_lengths}
+\include{chapters/appendix_q1d_transfer_matrix_derivation}
+\include{chapters/appendix_te_dz_relation}
+%%20091214%%\include{chapters/appendix_open_closed_channel_folding}
+%%20091214%%\include{chapters/appendix_self-embedding_derivation}
+%%20091214%%\include{chapters/appendix_transmission_derivation}
+
+\specialhead{BIBLIOGRAPHY}
+\remline
+%\singlespace
+\bibliography{../../research/Bibliography/latex_bibliography}
+% for an example, see http://amath.colorado.edu/documentation/LaTeX/reference/faq/bibstyles.html
+%%20091214%%\bibliographystyle{abbrv}  % numbered alphabetical list
+\bibliographystyle{unsrt} % in order to citation. Problem: forces lower case 
+%\bibliographystyle{unsrtnat} % NOT what I want
+
+%%20091214%%\addcontentsline{toc}{chapter}{Curriculum Vitae}
+%%20091214%%\include{chapters/vita}
+
+\newpage 
+\printglossary
+% make sure the glossary shows up in table of contents:
+\addcontentsline{toc}{chapter}{Glossary}
+
+\newpage
+\printindex
+\addcontentsline{toc}{chapter}{Index}
+
+\end{document}

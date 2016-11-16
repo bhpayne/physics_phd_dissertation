@@ -1,0 +1,35 @@
+\chapter{Characteristic Length Scales}
+\label{sec:lengths}
+%This table lists lengths used in the dissertation.
+
+\captionsetup[table]{list=no}
+%\begin{center}
+\begin{table} % for label and caption purposes
+%\begin{tabular}{|l|l|l|} % table runs off page
+%\begin{tabular}{|l|l|p{7cm}|} % center column too large
+\caption{Length scales used in this dissertation}
+\begin{tabular}{|l|p{4cm}|p{8.5cm}|}
+%\begin{tabular*}{0.75\textwidth}{|l|l|l|}{@{\extracolsep{\fill}} | c | c | c | }
+\hline Symbol & Name & Description \\ \hline
+$\lambda$ & wavelength & Wavelength of incident light \\ 
+$L$ &  system length & Length of waveguide along direction of propagation ($z$-axis) \\ 
+$W$ & system width & Dimension of waveguide perpendicular to direction of propagation ($y$-axis) \\
+$L_{\phi}$ & phase coherence length & Length over which phase remains coherent. Equivalent to $L_{inelastic}$\cite{1988_Stone,1986_Imry}. Applicable only to electron transport. \\
+$L_D$ & path length & How far a particle (i.e. ray optics) travels in the media in ballistic and diffusive regimes \\
+$\ell_{scat}$ & scattering length & Average distance between scattering events. Often referred to as $\ell_{mfp}$ (mean free path) or the inelastic length\cite{1984_John_prl}, or extinction length\cite{1999_van_Tiggelen}. \\ 
+$\ell_{tmfp}$ & transport mean free path & Average distance over which phase and direction are randomized.  $\ell_{tmfp} = \frac{\ell_{scat}}{1-\langle cos\ \theta \rangle}$. Sometimes referred to as elastic mfp\cite{1991_John}. % page 34, col 2
+Measured with respect to $L$. \\ 
+$\xi$ & localization length & Probability of diffusive path forming loop is 1. $\xi~=~N~\ell_{tmfp}$. Measured with respect to $L$. \\ 
+$\ell_{a,g}$ & ballistic absorption/gain length & Average distance over which intensity decreases by two/increases by two. \\
+$\xi_{a,g}$ & absorption/gain length & How far, on average, a particle travels in the diffusive regime before being absorbed (or doubled), measured with respect to path length $L_D$ in the diffusive regime \\ 
+$z_p$ & penetration depth & Applies to diffusive regime only. $z_p \approx \ell_{tmfp}$ \\ 
+\hline
+\end{tabular}
+
+\ \\ 
+
+\label{tabl:lengths}
+\end{table}
+%\end{center}
+All length scales (except $\lambda$) are normalized by wavelength. % lengths can be converted to equivalent times by $\ell = c t$
+%\captionsetup[table]{list=yes}

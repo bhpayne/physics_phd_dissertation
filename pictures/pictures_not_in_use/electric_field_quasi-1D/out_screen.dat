@@ -1,0 +1,61 @@
+ ***** start of initialization numbers *****
+ L (system length)                               =    200.00000000000000     
+ W (width of the waveguide)                      =    10.250000000000000     
+ scattering strength of point scatterers         =    4.0000000000000000     
+ initial and final active value                  =    0.0000000000000000        0.0000000000000000                1
+ initial and final frequencies, number of steps  =   0.98999999999999999        1.0100000000000000             1001
+ M (total number of scatterers)                  =          390
+ lambda (wavelength ratio (unit-less wavelength)) =   1.00000000000000000     
+ se_step (number of scatterers in a se step)     =           10
+ number of open   channels                       =           20
+ number of closed channels                       =            0
+ number of realizations                          =            1
+ seed number                                     =   1242140703
+ M_se (number of self-embedding steps)           =           39
+ Average distance between scatterers             =    2.2926862533740322     
+ Minimum distance between scatterers             =    1.1463431266870161     
+ n_open                                          =           20
+ Total # of channels nmax                        =           20
+ ************ end of initialization numbers **************
+  
+   4.9950049950049955      % of frequencies are done for rlz           1
+ run time so far:   4.3790736      minutes
+   9.9900099900099910      % of frequencies are done for rlz           1
+ run time so far:   8.7581472      minutes
+   14.985014985014985      % of frequencies are done for rlz           1
+ run time so far:   13.145222      minutes
+   19.980019980019982      % of frequencies are done for rlz           1
+ run time so far:   17.541962      minutes
+   24.975024975024976      % of frequencies are done for rlz           1
+ run time so far:   21.932104      minutes
+   29.970029970029969      % of frequencies are done for rlz           1
+ run time so far:   26.319042      minutes
+   34.965034965034967      % of frequencies are done for rlz           1
+ run time so far:   30.712187      minutes
+   39.960039960039964      % of frequencies are done for rlz           1
+ run time so far:   35.106663      minutes
+   44.955044955044954      % of frequencies are done for rlz           1
+ run time so far:   39.496937      minutes
+   49.950049950049952      % of frequencies are done for rlz           1
+ run time so far:   43.893272      minutes
+   54.945054945054949      % of frequencies are done for rlz           1
+ run time so far:   48.282688      minutes
+   59.940059940059939      % of frequencies are done for rlz           1
+ run time so far:   52.671425      minutes
+   64.935064935064929      % of frequencies are done for rlz           1
+ run time so far:   57.063435      minutes
+   69.930069930069934      % of frequencies are done for rlz           1
+ run time so far:   61.450909      minutes
+   74.925074925074924      % of frequencies are done for rlz           1
+ run time so far:   65.840179      minutes
+   79.920079920079928      % of frequencies are done for rlz           1
+ run time so far:   70.234520      minutes
+   84.915084915084918      % of frequencies are done for rlz           1
+ run time so far:   74.625992      minutes
+   89.910089910089908      % of frequencies are done for rlz           1
+ run time so far:   79.022873      minutes
+   94.905094905094899      % of frequencies are done for rlz           1
+ run time so far:   83.421013      minutes
+   99.900099900099903      % of frequencies are done for rlz           1
+ run time so far:   87.823692      minutes
+ total run time=    87.911896      minutes

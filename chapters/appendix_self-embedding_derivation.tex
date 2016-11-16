@@ -1,0 +1,377 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section {boundry conditions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+step 1.) 
+
+Assumptions:
+
+transport mean free path is normalized to unity
+
+L $equiv$ system length
+
+l $equiv$ transport mean free path
+
+k $equiv$ wave number
+
+\begin{equation}
+l \ll L \leq N l
+\end{equation}
+
+weak scattering approximation: $k l \ll 1$
+
+$L \ll N l \rightarrow$ diffusive regime
+
+$N l \ll L \rightarrow$ localization regime
+
+
+step 2.) 
+
+In general, the electric field propagating through medium as a function of position for channel n
+\begin{equation}
+E_n(x) = E_n^+ \exp(i k_{\parallel n} x) + E_n^- \exp(-i k_{\parallel n} x) 
+\end{equation}
+For the bulk media with light incident on the left for N channels with the input channel $n_0$, $ 1 \leq n_0 \leq N$, the $n^{th}$ channel electric field a position $x$ is described by
+\begin{center}
+\begin{tabular}{cc}
+$n = n_0$ \quad \quad \quad & $ E_{n_0}(x) = 1 \exp(i k_{\parallel n_0} x) + r_{n_0n_0} \exp(-i k_{\parallel n_0} x) $ \\
+$n \ne n_0$  \quad \quad \quad & $ E_n(x) = 0 + r_{n_0n} \exp(-i \kappa_{\parallel n} x) $ \\
+\end{tabular}
+\end{center}
+Where the coefficient 1 is the input amplitude. The coefficient $r_{n_0n_0}$ is reflection.  There are two indices, the first refering to the input channel and the second is channel number. The 0 term of the second equation denotes that for channels other than the input channel the input is zero.
+% why does the kappa have an "i" in the second equation?  Why kappa?
+The derivative of the electric field is described similarly. Again, there is a difference between between the equations for the input channel $n_0$ and all other channels.
+\begin{center}
+\begin{tabular}{cc}
+$n = n_0$ \quad \quad \quad & $ \frac{1}{k_{\parallel n_0}} E_{n_0}^{\prime}(x) = i \exp(i k_{\parallel n_0} x) - i r_{n_0n_0} \exp(-i k_{\parallel n_0} x) $ \\
+$n \ne n_0$  \quad \quad \quad & $ \frac{1}{k_{\parallel n_0}} E_n^{\prime}(x) = 0 -i r_{n_0n} \exp(-i \kappa_{\parallel n} x) $ \\
+\end{tabular}
+\end{center}
+The channels other than the input channel has incident value 0.
+
+
+step 3.)
+
+To set up input boundry conditions on the incident side of the medium, $(x=0)$, the input vector has the form
+\begin{equation}
+\vec{v}(0) = 
+\left( \begin{array}{c}
+r_{n_01} \\     % field, open: first channel
+r_{n_02} \\     % field, open: second channel
+\vdots \\       % ...
+1+r_{n_0n_0} \\	% field, open: input channel
+\vdots \\       % ...
+r_{n_0N} \\     % field, open: last channel
+r_{n_0N+1} \\   % field, closed: first channel 
+\vdots \\       % ...
+r_{n_0n_{max}}\\ % field, closed: last channel
+-i r_{n_01} \\  % deriv, open: first channel
+-i r_{n_02} \\  % deriv, open: second channel
+\vdots \\       % ...
+i - i r_{n_0n_0} \\ % deriv, open: input channel
+\vdots \\       % ...
+-i r_{n_0N} \\  % deriv, open: last channel
+-i r_{n_0N+1} \\ % deriv, closed: first channel
+\vdots \\       % ...
+r_{n_0n_{max}} \\ % deriv, closed: last channel
+\end{array} \right)
+\label{incidentsidevector}
+\end{equation}
+Again, the first index keeps track of the input channel, the second index is the channel number. The size of $\vec{v}(0)$ is $N+N_c+N+N_c$, where $n_{max} = N+N_c$.  The upper half is the field, the lower half is the derivative of the field.  Each half is broken into $N$ open channels and $N_c$ closed channels.
+
+For $\vec{v}(0)$ the input channel is $n_0$. Note that when the two indices match, there is a $1+$ which is the input channel incident amplitude.  There is no input to the closed channels as we assume the incident beam is from infinity. Thus no near-field contribution to input.  
+
+The two vectors are related by a matrix that describes the propagation through the medium.
+\begin{equation}
+\hat{M}(0,L) \vec{v}(0) = \vec{v}(L)
+\end{equation}
+
+as long as disorder and $\lambda$ remain the same (?).
+
+step 4.)
+
+input channels
+
+In general, the electric fields for open and closed channels are
+\begin{center}
+\begin{tabular}{cc}
+open \quad \quad \quad & $ E_n(x) = E_n^+ \exp(i k_{\parallel n} x) + E_n^- \exp(-i k_{\parallel n} x) $ \\
+closed  \quad \quad \quad & $ E_n(x) = E_n^+ \exp(-\kappa_{\parallel n} x) + E_n^- \exp(\kappa_{\parallel n} x) $ \\
+\end{tabular}
+\end{center}
+where $i \kappa \equiv k$
+
+Note that on the exit side of the medium the second term is zero.
+
+Setting up the transmission side,
+\begin{equation}
+\vec{v}(L) = 
+\left( \begin{array}{c}
+t_{n_01} \\      % field, open: first channel
+t_{n_02} \\      % field, open: second channel
+\vdots \\        % ...
+t_{n_0N} \\	 % field, open: last channel
+t_{n_0N+1} \\    % field, closed: first channel 
+\vdots \\        % ...
+t_{n_0n_{max}} \\ % field, closed: last channel
+i t_{n_01} \\    % deriv, open: first channel
+i t_{n_02} \\    % deriv, open: second channel
+\vdots \\        % ...
+i t_{n_0N} \\	 % deriv, open: last channel
+-t_{n_0N+1} \\   % deriv, closed: first channel
+\vdots \\        % ...
+-t_{n_0n_{max}} \\ % deriv, closed: last channel
+\end{array} \right)
+\label{transmissionsidevector}
+\end{equation}
+Where the vector is similar to \ref{incidentsidevector}.  The size of $\vec{v}(L)$ is $2 n_{max}$ where $n_{max} = N+N_c$ and there are $N$ open channels, $N_c$ closed channels. The upper half is the field coefficients, the lower half is the electric field derivative. Unlike \ref{incidentsidevector} there is no input.
+
+The positive $i$ in the open channels of the derivative (lower half) denotes forward propagation.
+
+The $k$ and $kappa$ are normalized to 1 and do not appear in $\vec{v}(L)$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section {Self-embedding method}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Overview:
+
+multiplying many transfer matrices results in divergent eigenvalues.  To limit the growth of the divergence, periodic renormalization allows the user to extend how many transfer matrices can be multiplied.
+
+In a simplified example, given a large number of transfer matrices, multiply a first small subset on the incident side. Multiply a second subset and renormalize, then combine the two chunks. Repeat iteratively for as many subsets as make up the system length.
+
+One advantage to this approach is that each chunk is independent of the boundry condition.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection {Determining matrices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Self-embedding allows for boundry condition-independent calculation.  To allow this, re-write boundary conditions in the form 
+\begin{equation}
+\hat{G}\vec{v}(0)+\hat{H}\vec{v}(L) = \vec{v}_{BC}
+\end{equation}
+where $\vec{v}_{BC}$ should not contain any unknown variables. $\vec{v}_{BC}$ should not depend on transmission or reflection.  Any $\hat{G}$ and $\hat{H}$ that results in this is valid (not a unique solution). 
+
+One solution is
+\begin{equation}
+\hat{G} = 
+\left( \begin{array}{ccccccc|ccccccc}
+  1    &   0   & \ldots & | &        &        &        &    -i  &  0  & \ldots & | &        &    &        \\
+  0    &   1   &        & | &        &   0    &        &     0  & -i  &        & | &        &  0 &        \\
+\vdots &       & \ddots & | &        &        &        & \vdots &     & \ddots & | &        &    &        \\ 
+  -    &   -   &   -    & - &   -    &   -    &   -    &    -   &  -  &   -    & - &   -    & -  &        \\
+       &       &        & | &    1   &   0    & \ldots &        &     &        & | &   -1   &  0 & \ldots \\
+       &   0   &        & | &    0   &   1    &        &        &     &   0    & | &   0    & -1 &        \\
+       &       &        & | & \vdots &        & \ddots &        &     &        & | & \vdots &    & \ddots \\
+\hline
+       &       &        & | &        &        &        &        &     &        & | &        &    &        \\
+       &   0   &        & | &        &   0    &        &        &  0  &        & | &        &  0 &        \\
+       &       &        & | &        &        &        &        &     &        & | &        &    &        \\
+  -    &   -   &   -    & - &    -   &    -   &   -    &   -    &  -  &  -     & | &   -    & -  &   -    \\
+       &       &        & | &        &        &        &        &     &        & | &        &    &        \\
+       &   0   &        & | &        &   0    &        &        &  0  &        & | &        &  0 &        \\
+       &       &        & | &        &        &        &        &     &        & | &        &    &        \\
+\end{array} \right)
+\label{Gmatrix}
+\end{equation}
+The upper left quadrant manipulates the field, the upper right operates on the derivative. Each quadrant is divided into four parts: the upper left is open, the lower left is closed.
+
+Note that multiplying \ref{Gmatrix} by \ref{incidentsidevector} is $1(1+r) + -i(i - ir) = 2$ for the input channel and zero for all other channel values. The gives the upper half of the $\vec{v}_{BC}$ vector
+
+\begin{equation}
+\vec{v}_{BC} =
+\left( \begin{array}{c}
+0 \\
+2 \\
+0 \\
+\vdots \\
+0 \\
+-- \\
+0 \\
+\vdots \\
+0 \\
+\hline
+0 \\
+\vdots \\
+0 \\
+-- \\
+0 \\
+\vdots \\
+0 \\
+\end{array} \right)
+\label{vbc}
+\end{equation}
+The ``2'' occurs at the input channel, $n=n_0$.  Everything else being zero means there is no dependence on transmission, reflection, or any other variable.
+
+Once $\hat{G}$ is determined,  $\hat{H}$ must have a form that does not introduce variables
+(dependencies) into $\vec{v}_{BC}$.
+\begin{equation}
+\hat{H} =
+\left( \begin{array}{ccccccc|ccccccc}
+       &       &        & | &        &        &        &        &     &        & | &        &    &        \\
+       &   0   &        & | &        &   0    &        &        &  0  &        & | &        &  0 &        \\
+       &       &        & | &        &        &        &        &     &        & | &        &    &        \\
+  -    &   -   &   -    & - &    -   &    -   &   -    &   -    &  -  &  -     & | &   -    & -  &   -    \\
+       &       &        & | &        &        &        &        &     &        & | &        &    &        \\
+       &   0   &        & | &        &   0    &        &        &  0  &        & | &        &  0 &        \\
+       &       &        & | &        &        &        &        &     &        & | &        &    &        \\
+\hline
+  i    &   0   & \ldots & | &        &        &        &    -1  &  0  & \ldots & | &        &    &        \\
+  0    &   i   &        & | &        &   0    &        &     0  & -1  &        & | &        &  0 &        \\
+\vdots &       & \ddots & | &        &        &        & \vdots &     & \ddots & | &        &    &        \\ 
+  -    &   -   &   -    & - &   -    &   -    &   -    &    -   &  -  &   -    & - &   -    & -  &        \\
+       &       &        & | &    1   &   0    & \ldots &        &     &        & | &    1   &  0 & \ldots \\
+       &   0   &        & | &    0   &   1    &        &        &     &   0    & | &   0    &  1 &        \\
+       &       &        & | & \vdots &        & \ddots &        &     &        & | & \vdots &    & \ddots \\
+       \end{array} \right)
+\label{Hmatrix}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection {self-embedding implementation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The initial self-embedding matrix is 
+\begin{equation}
+\hat{S}(0,0) = (\hat{G}+\hat{H})^{-1}
+\end{equation}
+
+transmission:
+\begin{equation}
+\hat{S}(J+1,J+1) = \hat{M}_J \hat{\sum}(J) \hat{S}(J,J)
+\end{equation}
+where
+\begin{equation}
+\hat{\sum}(J) \equiv \left[ \hat{I} - \hat{S}(J,J) \hat{H} \left( \hat{I} - \hat{M}(J) \right) \right]^{-1}
+\end{equation}
+
+reflection:
+\begin{equation}
+\hat{S}(0,J) = \hat{S}(0,J) \left[ \hat{I} + \hat{H} \left( \hat{I} - \hat{M}(J) \right) \hat{\sum}(J) \hat{S}(J,J) \right]
+\end{equation}
+
+\begin{equation}
+\begin{gathered}
+\vec{v}_N = \hat{S}(N,N) \vec{v}_{BC} \\
+\vec{v}_0 = \hat{S}(0,N) \vec{v}_{BC}
+\end{gathered}
+\end{equation}
+
+then $v_t(1:N_{total},1)$ need to add to $t=(1:N_{total},1:N_{open})$ the last self-embedding step
+
+
+\begin{equation}
+\vec{v}(0) = 
+\left( \begin{array}{ccc|ccc}
+           &         &    &  &   & \\
+           & \hat{I} &    &  & 0 & \\
+           &         &    &  &   & \\
+\hline
+ -i\hat{I} &   |     & 0  &  &   & \\
+     -     &   -     & -  &  & 0 & \\
+     0     &   |     & 0  &  &   & \\
+\end{array} \right)
+\left( \begin{array}{c}
+\\
+ \vec{r} \\
+ \\
+\hline
+  \\
+0 \\
+  \\
+\end{array} \right)
++
+\left( \begin{array}{c}
+\\
+ \vec{\delta}_{n_0} \\
+ \\
+\hline
+  \\
+i\vec{\delta}_{n_0} \\
+  \\
+\end{array} \right)
+= \hat{S}_r 
+\left( \begin{array}{c}
+ \vec{r} \\
+ 0
+\end{array} \right)
++\vec{p}
+\end{equation}
+
+
+\begin{equation}
+\vec{v}(L) = 
+\left( \begin{array}{ccc|ccc}
+  &   &  &         &         &        \\
+  & 0 &  &         & \hat{I} &         \\
+  &   &  &         &         &         \\
+\hline
+  &   &  & \hat{I} &   |     &   0     \\
+  & 0 &  &   -     &   -     &   -     \\
+  &   &  &   0     &   |     & \hat{I} \\
+\end{array} \right)
+\left( \begin{array}{c}
+\\
+0 \\
+\\
+\hline
+\\
+\vec{t} \\
+\\
+\end{array} \right)
+= \hat{S}_t
+\left( \begin{array}{c}
+0 \\
+\vec{t}
+\end{array} \right)
+\end{equation}
+
+\begin{equation}
+\hat{M}\hat{S}_r
+\left( \begin{array}{c}
+\vec{r}
+0 \\
+\end{array} \right)
++\hat{M}\vec{p} = \hat{S}_t 
+\left( \begin{array}{c}
+0 \\
+\vec{t}
+\end{array} \right)
+\end{equation}
+
+\begin{equation}
+\hat{M}\hat{S}_r
+\left( \begin{array}{c}
+\vec{r}
+0 \\
+\end{array} \right)
+-\hat{S}_t 
+\left( \begin{array}{c}
+0 \\
+\vec{t}
+\end{array} \right) =
+-\hat{M}\vec{p}
+\end{equation}
+
+\begin{equation}
+\hat{c}
+\left( \begin{array}{c}
+\vec{r} \\
+\vec{t}
+\end{array} \right)
+= -\hat{M}\vec{p}
+\end{equation}
+
+Once $\hat{S}(N,N)$ is known for the medium, the transmission is extracted one input channel at a time.
+
+\begin{equation}
+\hat{S}(N,N) \vec{v}_{BC} = \vec{t}
+\end{equation}
+
+For each input channel, there is an output transmission vector. To construct the transmission matrix, which relates input channel to output channel, join the transmission outputs.
+
+\begin{equation}
+\hat{T} = [ \vec{t} \vec{t} ... \vec{t} ]
+\label{transmissionMatrix}
+\end{equation}

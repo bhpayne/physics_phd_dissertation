@@ -1,0 +1,65 @@
+.99       1.01       1001
+omgi    omgf   n_omg  
+
+4      .false.      0             0             1     
+alphas varyStrength alphaai       alphaaf          n_alphaa
+
+200  10.25  390    0       1       1       1      10   
+L    W      M   n_closed start_rlz n_rlz lambda se_step  
+
+1               1000              -.1         4
+percntwriteJWD   binsize           initial    gain step
+crash tolerance  for distribution  gain step  decrements
+
+distributions: uf Ta,Ea ; uf T,E ; 
+ 0         35        0        140    0        160     0      700
+ufTaMIN  ufTaMAX  ufEaMIN  ufEaMAX  ufTMIN  ufTMAX  ufEMIN  ufEMAX
+
+distributions: pw g,E ; critical gain
+  0       20       0      1500    0     -20
+pwgMIN  pwgMAX  pwEMIN  pwEMAX  cgMIN  cgMAX
+
+alphas = "alpha strength"
+alphaai,f are "active initial, final" component of alpha. 
+0=passive; negative = gain, positive = absorption
+Upper/lower limits may be around +/-0.01
+
+L = system length
+
+Instead of setting N_open and wavelength, W is determined by those two parameters. 
+
+W = system width = (N+.5)*lambda*.5  [see derivation in Ben's notes, 20080610, book 3]
+		 
+ 	 N = number of open channels
+	 W sets the number of open channels
+	Assuming lambda=1, then
+	 W = 20.25 => N_open=40
+	 W = 15.25 => N_open=30
+	 W = 10.25 => N_open=20
+	 W = 5.25 ==> N_open=10
+	 W = 2.75 ==> N_open=5
+	 W = 1.25 ==> N_open=2
+
+	Setting W is better than setting N_open because it allows better control 
+	over how close to singularity you want to be.
+
+Also, N_open sets the maximum frequency range
+omg_max = (N+.75)/(N+.5)
+omg_min = (N+.25)/(N+.5)
+
+alpha = scattering strength (can be constant or bimodal, depending on "varyAlpha"
+
+M = total number of scatterers
+
+lambda0 = wavelength
+
+se_step = number of scatterers in a self-embedding step
+
+n_closed = number of closed channels
+
+n_rlz = number of realizations, each with a random setup of scatterer positions
+		Note: for MPI runs, n_rlz is the number of realizations per node?
+
+varyAlpha: if "false" then ScatteringMatrix(c,d) = alphasign*alpha*2/W/Kpara(c-nmax)*...
+           if "true" then the sign varies between positive and negative, leading to an average vacuum-like refractive index
+

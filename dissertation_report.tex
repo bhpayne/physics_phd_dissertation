@@ -1,0 +1,351 @@
+% original by Dr Kelly Homan
+
+% hosted project:
+% http://code.google.com/p/missouri-science-technology-latex-dissertation-thesis-template/
+
+% email list:
+% S&T Thesis/Dissertation LaTeX Template User Group <latextdt-grp@mst.edu>
+
+% google group:
+% https://groups.google.com/a/mst.edu/group/latextdt-grp/topics?hl=en
+
+% see http://grad.mst.edu/currentstudents/thesesdissertations/
+% for guidelines
+\documentclass[times,12pt,titlepage]{mstthesis} % 
+\doublespacing
+% Dr Parris, Vojta, Story, and Yamilov would prefer single spaced, double sided print
+% Binding and printing: 
+% Library needs good paper, bound. Department can uses either good or normal paper, also bound. Department will pay for binding of these two copies.
+% Dr Yamilov wants two copies on good paper, single spaced and double sided; bound (one for him, one for Hui Cao). Cost of binding is $10 per copy through department. 
+% Parents printed copy
+
+% Ben isn't sure what the purpose of the following are
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}\chead{}\rhead{\thepage}
+\lfoot{}\cfoot{}\rfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Ben's additions
+\usepackage{comment} % multi-line comments
+\usepackage{graphicx} % necessary for inclusion of .eps for figures
+
+% the following is for published chapters to note where they were published
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+% http://help-csli.stanford.edu/tex/latex-footnotes.shtml
+
+% Use the first command below if you want captions over 1 line indented. A side
+% effect of this is to remove the use of bold for captions. To restore bold,
+% also include the second line below.
+\usepackage[hang]{caption}  
+% change the caption delimiter in caption2.sty from a colon to a period:
+%\renewcommand\captionlabeldelim{.}
+%\usepackage{hangcaption}
+
+% % \usepackage{algorithmic}
+% % \usepackage{algorithm}
+% % \usepackage{url}
+% % \usepackage{lscape}
+% % \usepackage{subfigure}
+% % \usepackage{flafter} % http://stackoverflow.com/questions/547508/in-latex-is-there-a-way-to-put-a-float-automatically-after-where-it-is-first-re
+% % 
+% % 
+% % %%\ExecuteOptions{textures}
+
+%\usepackage{titlesec}% http://ctan.org/pkg/titlesec
+%\usepackage{lipsum}% http://ctan.org/tex-archive/macros/latex/contrib/lipsum   http://ctan.org/pkg/lipsum
+
+%\usepackage{tocloft} % http://ctan.org/pkg/tocloft
+
+% http://en.wikibooks.org/wiki/LaTeX/Page_Layout#Widows_and_orphans
+\widowpenalty=10000 % prevents the first line of a paragraph from being alone at the bottom of a page. It will either cause that line to move to the next page, or cause one line from the next page to join the lone line. 
+\clubpenalty =10000 % prevent the last line of a paragraph to be alone at the top of a page. At best it will force there to be two lines. 
+% MS&T Office of Grad Studies says ``Need to have at least 2 lines at the top and at the bottom of every page. No lone headers at bottom of page.
+% see https://groups.google.com/d/msg/comp.text.tex/uN7tvjubk8o/kcUvevut0hEJ
+
+% brokenpenalty is meant to eliminate hyphenation of words at the end of a page. However, it may introduce non-uniform pages
+% https://groups.google.com/d/msg/comp.text.tex/pBSOMuQzOH0/innVfjc3ZG4J
+\brokenpenalty=10000 % having this causes page numbers to be incorrect in ToC. Not having it causes word breaks at end of page
+
+% http://en.wikibooks.org/wiki/LaTeX/Formatting#Hyphenation
+%\hyphenation{local-ization diff-usion}
+
+%\usepackage{enumerate}
+
+% for T/E paper
+%\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{verbatim} % multi-line comments
+\usepackage{subfigure}             % allows for use of "sub figure" 1a, 1b, etc
+
+% for D(z) PRB
+% % %\usepackage[fleqn]{amsmath}
+% % %\usepackage{amsthm}
+%\usepackage{amsmath} % adding this doesn't fix the symbol problem, as the package is required by mstthesis.cls
+%\usepackage{mathtools} % this 
+\usepackage{amssymb} % \gtrsim
+
+\usepackage{makeidx} % Index
+\makeindex
+%\usepackage{glossary}
+\usepackage[xindy,toc]{glossaries} % http://en.wikibooks.org/wiki/LaTeX/Glossary
+\makeglossary  % http://texblog.wordpress.com/2007/11/01/glossary-in-latex/
+
+% Note: hyperref must be the last package
+\usepackage[breaklinks=true, % allow links to break over lines by making links over multiple lines into PDF links to the same target 
+% hyperindex, % Makes the page numbers of index entries into hyperlinks. 
+% %backref, 
+%pdftex,
+%bookmarks=true % bookmark hierarchy is incorrect   http://www.latex-community.org/forum/viewtopic.php?f=47&t=7762
+%bookmarksnumbered=true
+% %pagebackref, % Adds backlink text to the end of each item in the bibliography, as a list of page numbers. 
+linktocpage, % make page number, not text, be link on TOC, LOF and LOT 
+% colorlinks=false, 
+pdftitle={Dissertation}, 
+pdfauthor={Ben Payne}, 
+pdfsubject={PhD dissertation}, 
+pdfkeywords={dissertation anderson localization random media gain correlated disorder}
+]{hyperref}
+
+%ps% ... uncomment after editing toc, lof, lot ...
+\nofiles
+
+\begin{document}
+
+%ps% ... specify: ms | phd ...
+\begin{ThesisTitlePage}{phd}
+
+\author{\MakeUppercase{Benjamin Henry Payne}}
+
+\thesistitle{Characterization of wave transport in non-conservative media with
+random and correlated disorder}
+
+\department{Physics}
+
+\degree{Doctor of Philosophy}
+
+%ps% ... thesis committee ...
+
+\ThesisAdviser{Dr. Alexey Yamilov}
+
+%ps% If you have a co-advisor, enter the name in the
+%ps% curly braces below and uncomment.
+%ps% Otherwise, leave commented out.
+%ps%\cothadviser{} % If you have 2 thesis advisers
+
+\memberone{Dr. Hui Cao}
+\membertwo{Dr. Paul Parris}
+\memberthree{Dr. John Story}
+\memberfour{Dr. Thomas Vojta}
+
+%ps% ... Graduation date.  NOT your submission date! ...
+\graddate{2012}
+
+\end{ThesisTitlePage}
+
+%ps% ... copyright page - true|false ...
+% from 
+% http://creativecommons.org/choose/
+
+This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a copy of this license, visit 
+\\\mbox{\href{http://creativecommons.org/licenses/by-nc-sa/3.0/}{http://creativecommons.org/licenses/by-nc-sa/3.0/}} 
+or send a letter to Creative Commons, 444~Castro Street, Suite~900, Mountain View, California, 94041, USA.
+
+\ \\
+Published journal articles retain their original copyrights.
+
+% http://www.tandf.co.uk/journals/contact.asp
+% Customer Services for Taylor & Francis Group Journals
+% T&F Customer Services
+% 325 Chestnut Street
+% Suite 800
+% Philadelphia, PA 19106, USA
+% 
+% http://journalauthors.tandf.co.uk/preparation/copyright.asp
+% 
+% "the right to include an article in a thesis or dissertation that is
+% not to be published commercially, provided that acknowledgement to
+% prior publication in the relevant Taylor & Francis journal is made
+% explicit;"
+% 
+% 
+% ****************************
+% APS Headquarters
+% One Physics Ellipse
+% College Park, MD 20740-3844
+% (301) 209-3200
+% 8am-6pm M-F
+% 
+% http://publish.aps.org/copyrightFAQ.html#thesis
+% 
+% "As the author of an APS-published article, may I include my article
+% or a portion of my article in my thesis or dissertation?"
+% 
+% "Yes, the author has the right to use the article or a portion of the
+% article in a thesis or dissertation without requesting permission from
+% APS, provided the bibliographic citation and the APS copyright credit
+% line are given on the appropriate pages."
+% 
+% ****************************
+% Elsevier: 1 888 834 7287
+% 
+% http://www.elsevier.com/wps/find/authorsview.authors/rights
+% 
+% "the right to include the journal article, in full or in part, in a
+% thesis or dissertation;"
+
+\copyrightyear{2012}
+\ThesisCopyrightPage{true}
+
+%ps% ... front matter - publication option - ms|phd...
+
+\begin{ThesisPublicationOption}{phd}
+This dissertation has been prepared in the form of six papers.
+
+\renewcommand{\theenumi}{Paper \arabic{enumi}}
+\begin{enumerate}%[Paper 1]
+
+%  http://tex.stackexchange.com/questions/38139/how-can-i-calculate-the-difference-of-2-counters-pageref
+% \newcounter{tempor}
+% \setcounter{tempor}{\pageref{paper:1_start}}
+% \addtocounter{tempor}{1}
+%\item Pages~\arabic{temp}--\pageref{paper:1_end} have been published as
+\item Pages~\pageref{paper:1_start}--\pageref{paper:1_end} have been published as  
+  \textit{\href{http://link.aps.org/doi/10.1103/PhysRevB.82.104204}{Relation between transmission and energy stored in random media with gain}}, Physical Review B \textbf{82} 104204 (2010) with Jonathan Andreasen, Hui Cao, and Alexey Yamilov.
+\item Pages~\pageref{paper:2_start}--\pageref{paper:2_end} have been published as 
+  \textit{\href{http://dx.doi.org/10.1080/09500340.2010.519443}{Classification of regimes of wave transport in non-conservative random media}}, Journal of Modern Optics (2010) with Alexey Yamilov.
+\item Pages~\pageref{paper:3_start}--\pageref{paper:3_end} have been submitted as
+  \textit{Near-field effects in wave transport through in disordered waveguides} to Physical Review B (2012) with Tom~Mahler and Alexey Yamilov.
+\item Pages~\pageref{paper:4_start}--\pageref{paper:4_end} have been published as 
+  \textit{\href{http://link.aps.org/doi/10.1103/PhysRevB.82.024205}{Anderson Localization as position-dependent diffusion in disordered waveguides}}, 
+  Physical Review B \textbf{82} 024205 (2010) with Alexey Yamilov and Sergey Skipetrov.  
+\item Pages~\pageref{paper:5_start}--\pageref{paper:5_end} have been submitted as 
+  \textit{Mapping algorithm from the two-dim-\\ensional aperiodic Thue-Morse structure to the square lattice} to Computer Physics Communications (2012) with Alexey Yamilov.
+\item Pages~\pageref{paper:6_start}--\pageref{paper:6_end} have been submitted as 
+  \textit{2D Thue-Morse array of optical cavities: tight-binding model} to Physical Review B (2012) with Heeso Noh, Hui Cao, and Alexey Yamilov.
+\end{enumerate}
+\renewcommand{\theenumi}{\arabic{enumi}}
+
+An earlier letter, 
+\textit{\href{http://dx.doi.org/10.1016/j.physb.2010.01.025}{Criterion for light localization in random amplifying media}}, 
+has been published in Physica B \textbf{405}, 3012--3015 (2010) with Hui Cao and Alexey Yamilov. This is reported in Paper 1.
+
+\end{ThesisPublicationOption}
+%ps% ... front matter - thesis abstract ...
+\begin{ThesisAbstract}
+\input{chapters/abstract}
+\end{ThesisAbstract}
+
+%ps% ... front matter - acknowledgements ...
+\begin{ThesisAcknowledgment}
+\input{chapters/acknowledgements}
+\end{ThesisAcknowledgment}
+
+%ps% ... toc, lof, and lot (list of symbols in respective papers) ...
+\begin{ThesisFrontMatter}
+\tableofcontents
+\listoffigures
+\listoftables
+\end{ThesisFrontMatter}
+
+\newcommand{\boldnabla}{\mbox{\boldmath$\nabla$}}
+\newcommand{\boldrho}{\mbox{\boldmath$\rho$}}
+
+%ps% ... chapter 1 - ptointroduction ...
+\begin{ThesisBody}
+%Here is dissertation body
+\input{chapters/introduction_draft3}
+%\end{ThesisBody}
+
+%ps% ... thesis publications ...
+%\begin{ThesisPublications}
+% \PaperManuscript{1}{Relation between transmission and energy stored in random media with gain}
+%Phys. Rev. B 82 104204 (2010) doi:10.1103/PhysRevB.82.104204
+%/svn/research/Project_1D_Transport/2010_TE_manuscript/2009_TE_prb.tex
+% pictures from
+%/svn/research/Project_1D_Transport/2010_TE_manuscript/20100115_submission
+% \setcounter{section}{0}
+% \setcounter{figure}{0}
+% \setcounter{table}{0}
+%\label{paper:1_start} % this label ends up on the page prior
+\input{chapters/Relation_between_transmission_and_energy_stored_in_random_media_with_gain__Phys_Rev_B/2009_TE_prb}
+\label{paper:1_end}
+
+% \PaperManuscript{2}{Classification of regimes of wave transport in \-non-\-con\-servative random media}
+%Journal of Modern Optics (2010) doi:10.1080/09500340.2010.519443
+% /svn/research/Project_Quasi1D_Transport/2010_Regimes_Plot_manuscript/2010_JMO/20100712_regimes_plot.tex
+% \setcounter{section}{0}
+% \setcounter{figure}{0}
+% \setcounter{table}{0}
+%\label{paper:2_start}
+\input{chapters/Classification_of_regimes_of_wave_transport_in_non-conservative_random_media__J_Mod_Optics/20100712_regimes_plot}
+\label{paper:2_end}
+
+
+% \PaperManuscript{3}{Near-field effects in wave transport through in disordered waveguides}
+% to be submitted
+% /svn/research/Project_Quasi1D_Transport/2012_Closed_Channels_manuscript/
+%\label{paper:3_start}
+\input{chapters/Near-field_effects_in_wave_transport_through_in_disordered_waveguides/quasi-1D_near-field_effects}
+\label{paper:3_end}
+% 
+% % \PaperManuscript{4}{Anderson Localization as position-dependent diffusion in disordered waveguides}
+% % Phys. Rev. B 82, 024205 (2010) doi:10.1103/PhysRevB.82.024205
+% % /svn/research/Project_Quasi1D_Transport/2010_Dofz_manuscript/quasi1d_dofz_prb.tex
+%\label{paper:4_start}
+\input{chapters/Anderson_Localization_as_position-dependent_diffusion_in_disordered_waveguides__Phys_Rev_B/quasi1d_dofz_prb}
+\label{paper:4_end}
+% 
+% % \PaperManuscript{5}{Mapping algorithm from the two-dimensional aperiodic Thue-Morse structure to the square lattice}
+% % to be submitted
+% % /svn/research/Project_DAS/2012_Mapping_2D_TM_manuscript
+%\label{paper:5_start}
+\input{chapters/Mapping_algorithm_from_the_two-dimensional_aperiodic_Thue-Morse_structure_to_the_square_lattice/mapping_2D_TM}
+\label{paper:5_end}
+% 
+% % \PaperManuscript{6}{2D Thue-Morse array of optical cavities: tight-binding model}
+% % to be submitted
+% % /svn/research/Project_DAS/2012_TB_for_2DTM_manuscript
+% % \setcounter{section}{0}
+% % \setcounter{figure}{0}
+% % \setcounter{table}{0}
+%\label{paper:6_start}
+\input{chapters/2D_Thue-Morse_array_of_optical_cavities_tight-binding_model/TB_for_2DTM}
+\label{paper:6_end}
+
+%\end{ThesisPublications}
+
+%\begin{ThesisBackMatter}
+\input{chapters/conclusion}
+%\lipsum[1-20]% to test page spacing
+%\end{ThesisBackMatter}
+\end{ThesisBody}
+
+\begin{ThesisAppendix}{three}
+\input{chapters/appendix_lengths} % referenced in introduction
+%\input{chapters/appendix_transmission_derivation} % expansion of math in T/E paper
+\input{chapters/appendix_q1d_transfer_matrix_derivation}
+\input{chapters/appendix_te_dz_relation} 
+\end{ThesisAppendix}
+
+%\newpage\bibliographystyle{plainnat}
+\newpage\bibliographystyle{unsrt}
+\bibliography{../../research/Bibliography/latex_bibliography}
+
+\begin{Vita}
+\input{chapters/vita}
+\end{Vita}
+
+\newpage 
+\printglossary
+% make sure the glossary shows up in table of contents:
+\addcontentsline{toc}{chapter}{Glossary}
+
+\newpage
+\printindex
+\addcontentsline{toc}{chapter}{Index}
+
+\end{document}
+\endinput

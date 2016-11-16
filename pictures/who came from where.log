@@ -1,0 +1,118 @@
+peaks_match_peaks_dont_match.pdf
+
+1-D_0708-curnt\not_current\proj11-071030-periodic,singleOrDouble defect\redone for presentation and publication\big combined plot
+
+*************************************
+
+log_ET_v_freq
+log_TE_v_freq
+energy_distribution_g_99gc.pdf
+energy_distribution_passive.pdf
+
+1-D_0708-curnt\not_current\proj39-TE_integral
+
+***********************************
+
+alpha_beta_electric_field.pdf
+alpha2_beta2.pdf
+alpha1_beta1.pdf
+
+1-D_0708-curnt\proj34-080222-gain_alpha_beta\1.44760732256 - 20gain steps
+
+*********************************
+
+wronskian_LR_RL
+
+1-D_0708-curnt\winfig\wronskian
+
+********************************
+
+passive_defect_left_unit_length.pdf
+passive_defect_right_unit_length.pdf
+passive_defect_center_unit_length.pdf
+
+one-dimensional_200708-2008\not_current\proj11-071030-periodic,singleOrDouble defect\redone for presentation and publication
+
+************************************
+
+one-dimensional_200708-2008\proj30-080204-progress_report\old\Yamilov's diffusion part
+
+yamilov_fixed_L_variable_gain_R_T.pdf
+yamilov_fixed_L_variable_gain_R_T_divided_by_Energy.pdf
+yamilov_diffusive_intensity_distribution.pdf
+
+note: all three come from the matlab
+script Yamilov sent me on Mon, Feb 25, 2008 at 11:30 AM
+
+**********************************
+
+electric_field_in_sample
+
+one-dimensional_200708-2008\not_current\proj06-071021-verfication(run2)\more scans - 3D
+
+*********************************
+
+AB_LR_and_RL
+
+one-dimensional_200708-2008\proj37-080306-AB_at_peak
+
+************************************
+
+one-dimensional_200708-2008\not_current\proj11-071030-periodic,singleOrDouble defect\redone for presentation and publication
+
+periodic_left_defect_absorb_to_gain.pdf
+periodic_right_defect_absorb_to_gain.pdf
+periodic_center_defect_absorb_to_gain.pdf
+
+************************************
+
+one-dimensional_200708-2008\proj40-080331-nimble_det\plotting
+
+trans_energy_det.eps
+
+************************************
+
+one-dimensional_200708-2008\not_current\proj28-080130-one_big_psi_using_matlab\old, doesn't work\rlz1, 10k freq_zoom_100_zoom_100\10kfreq
+
+tenk_energy_transmission_v_freq.pdf
+
+*************************************
+
+1-D_0708-curnt\winfig\transmission_derivation cartoons
+
+transmission_derivation_14_LR.eps
+transmission_derivation_34_RL.eps
+transmission_derivation_34_LR.eps
+transmission_derivation_off_res_LR.eps
+
+************************************
+
+one-dimensional_200708-2008\winfig\dima_setup_cartoon
+
+dima_setup_cartoon.eps
+
+************************************
+
+one-dimensional_200708-2008\not_current\proj06-071003-anomoly-energy,transmission(rlz1)\transmission doesn't match energy (right well)
+
+
+rlz1_elecfield_14L.pdf
+rlz1_elecfield_34L.pdf
+
+************************************
+
+one-dimensional_200708-2008\not_current\proj07-071011modeling double barrier\for_presentation and publication
+
+barrier_defect*
+
+************************************
+
+standing wave is originally from
+
+one-dimensional_200708-2008\not_current\proj28-080130-one_big_psi_using_matlab\old, doesn't work\rlz1, 10k freq_works\10kfreq
+
+and redone in
+
+one-dimensional_200708-2008\proj44-elec_field_res_freqs\another method
+
+*******************************************

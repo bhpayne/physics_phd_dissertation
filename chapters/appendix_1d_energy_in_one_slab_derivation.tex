@@ -1,0 +1,63 @@
+\section{energy in one slab for 1D}
+
+How to find the energy contained in a 1D slab:
+
+Physically, there is a slab in the x-direction from $x=0$ to $x=a$. The wave propating in the positive x-direction has amplitude $A$ and the opposite direction has amplitude $B$. 
+
+Method: match the wave and derivative at the boundary.
+
+Electric field:
+\begin{equation}
+ E(x) = A e^{i k n x} + B e^{-i k n x}
+\end{equation}
+
+Energy density is $\epsilon |E|^2$, where $\epsilon$ is the dielectric constant and is related to the index of refraction $n$ by $\epsilon=n^2$. The total energy in a slab of size $a$ is 
+\begin{equation}
+ energy = {\cal E} = \epsilon \int_0^a |E|^2 dx
+\end{equation}
+The integrand is
+\begin{equation}
+ |E|^2 = (A e^{i k n x} + B e^{-i k n x})(A^* e^{i k n x} + B^* e^{-i k n x})
+\end{equation}
+Expanding,
+\begin{equation}
+ |E|^2 = |A|^2+ AB^* e^{2 i k n x} + A^* B e^{-2 i k n x} + |B|^2
+\label{eq:expanded_energy}
+\end{equation}
+
+How do we know that A and B should be complex? Recall that the field is given by $E=A+B$, and the derivative of the field is
+\begin{equation}
+ \frac{1}{k} \frac{\partial E}{ \partial x} = i (A-B)
+\end{equation}
+Solving for $A$ and $B$, 
+\begin{equation}
+ \begin{gathered}
+  A= \frac{1}{2} (E-i\frac{1}{k} \frac{\partial E}{ \partial x}) \\
+  B= \frac{1}{2} (E+i\frac{1}{k} \frac{\partial E}{ \partial x})
+ \end{gathered}
+\end{equation}
+Thus $A$ and $B$ are both complex.
+
+Returning to Eq.~\ref{eq:expanded_energy} and re-grouping terms,
+\begin{equation}
+ {\cal E} = \epsilon \int_0^a |E|^2 dx = n^2 [(|A|^2+|B|^2)a + AB^* \frac{1}{2ikn}(e^{2 i k n x}-1) - A^*B\frac{1}{2ikn}(e^{-2 i k n x}-1)]
+\label{eq:energy_integral}
+\end{equation}
+Even though the terms contain complex pieces, we expect the result to be real since energy is observable and doesn't have a phase.
+
+If $z=x+iy$, then 
+\begin{equation}
+ z+z^* = x+iy +x-iy = 2x = 2 Re(z)
+\end{equation}
+Thus Eq.~\ref{eq:energy_integral} is real.
+
+The middle term of Eq.~\ref{eq:energy_integral} can be expanded as
+\begin{equation}
+ AB^* \frac{1}{2ikn}(e^{2 i k n x}-1) = \frac{AB^* e^{ i k n x}}{kn} \left( \frac{e^{ i k n x} - e^{-i k n x}}{2i}\right)
+\end{equation}
+
+And then applying $z+z^*=2 Re(z)$, the energy in one 1D slab is
+
+\begin{equation}
+ {\cal E} =  n^2 \left[(|A|^2+|B|^2)a + 2 Re \left(  \frac{AB^* e^{ i k n x} sin(kna)}{kn}\right)\right]
+\end{equation}

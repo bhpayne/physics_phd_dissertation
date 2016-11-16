@@ -1,0 +1,456 @@
+%\chapter{Derivation of Transfer Matrices for Electric Field Propagation in Planar Quasi-1D Waveguide From Maxwell's Equations}
+\chapter{Transfer Matrices for Electric Field Propagation}
+\label{sec:appendix_derivation_transfer_matrices_quasi1d}
+
+In the following derivation, the transfer matrix method\cite{1981_MacKinnon_scaling}\cite{1992_Pendry}\cite{2003_Kettemann} is developed from Maxwell's equations\cite{1999_Jackson} for metallic waveguides with scatterers. Before starting, assumptions necessary for the derivation are enumerated. 
+\begin{itemize}
+\item Metallic boundaries for the surfaces of the waveguide result in no leakage of electric field at the edges. These boundaries occur in the direction perpendicular to propagation $y$, which extends from $y=0$ to $y=W\lambda$. In the direction of propagation along $z$, the waveguide has open boundaries at $z=0$ and $z=L/\lambda$. The metallic boundaries are infinite along direction $x$.
+\item Scattering potentials are initially assumed to be $\delta$-functions, and are later reduced to a finite sum of Fourier components. This scattering potential description gives rise to transport behavior similar to that in physical disordered media. 
+%   \item non-physical
+%   \item infinite number of closed channels
+\item No inelastic scattering occurs; there is no energy loss due to scattering, and phase can remain coherent.% [scatterers only affect amplitude].
+\item No noise (spontaneous emission) is included. The primary interest in the modeling the transition from phenomena described by diffusion to that of Anderson localization. %Also, experimentally noise can be suppressed. % CITE
+%The transmission with gain will be slightly different compared to real output.
+\item Only transverse-magnetic (TM) waves are assumed incident. The electric field oscillates perpendicular to the plane of the 2D waveguide~
+%``For EM waves propagating in the $z,y$ plane, the $s$ ($E$ field parallel to the $x$ axis) and $p$ ($E$ field perpendicular to the $x$ axis) polarized waves can be described by two decoupled wave equations.'' 
+\cite{1996_soukoulis_dis2d}.
+\item The absorption and gain mechanism is purely mathematical: no atomic level modeling is included. This is the appeal of working in the mesoscopic regime, namely that atomic-based scattering descriptions are not necessary.
+%\item %, other than the capability to be selectively incident on a specific channel.
+%\item By choosing planar quasi-1D geometry (and thus scalar waves), we implicitly assume that polarization will not significantly alter transport phenomena. Although planar geometry may be experimentally realizable, it is not as popular as 3D quasi-1D
+\end{itemize}
+No input beam properties are initially assumed. The incident energy can be a plane wave, or any other distribution.
+
+%\section{From Maxwell equations to wave equation}
+%Starting with Maxwell's equations, the wave equation for electromagnetic waves is derived to demonstrate that only a single polarization is being studied. Ampere's Law (with current $\vec{J}=0$ and $D=\epsilon_0 E$)\cite{1999_Jackson}, %Eq. I.1b, page 2
+%\begin{equation}
+%\vec{\nabla} \times \vec{{\cal H}} = \epsilon_0 \frac{\partial\vec{E}}{\partial t}
+%\label{eq:amperes_law}
+%\end{equation}
+%Faraday's Law \cite{1999_Jackson}, %Eq. I.1a, page 2]
+%\begin{equation}
+%\vec{\nabla} \times \vec{E} = -\mu_0 \frac{\partial\vec{{\cal H}}}{\partial t}
+%\label{eq:faradays_law}
+%\end{equation}
+%Taking the temporal derivative of Eq.~\ref{eq:amperes_law}
+%\begin{equation}
+%\vec{\nabla} \times \frac{\partial\vec{{\cal H}}}{\partial t} = \epsilon_0 \frac{\partial^2\vec{E}}{\partial t^2}
+%\label{eq:temporal_derivative_of_amperes_law}
+%\end{equation}
+%Taking the curl of Eq.~\ref{eq:faradays_law}
+%\begin{equation}
+% \vec{\nabla} \times \vec{\nabla} \times \vec{E} = -\mu_0 \left(\vec{\nabla} \times \frac{\partial\vec{{\cal H}}}{\partial t} \right)
+%\label{eq:curl_of_faradays_law}
+%\end{equation}
+%Substitute Eq.~\ref{eq:temporal_derivative_of_amperes_law} into Eq.~\ref{eq:curl_of_faradays_law}
+%\begin{equation}
+%  \vec{\nabla} \times \vec{\nabla} \times \vec{E} = -\mu_0 \epsilon_0 \frac{\partial^2\vec{E}}{\partial t^2}
+%\end{equation}
+%Vector identity: $\vec{\nabla} \times \vec{\nabla} \times \vec{E} = \vec{\nabla} (\vec{\nabla}\cdot \vec{E})-\nabla^2 \vec{E}$. Since we assume no source, we have the wave equation
+
+The wave equation can be derived from Maxwell's equations (not shown), yielding
+\begin{equation}
+\nabla^2 E = \frac{1}{c^2} \frac{\partial^2\vec{E}}{\partial t^2}
+\label{eq:general_wave_equ}
+\end{equation}
+where $\mu_0 \epsilon_0 = \frac{1}{c^2}$. 
+%[See 1996 Soukoulis et al PRB v53 n13 pg 8340, section II] 
+% Eq.~\ref{eq:general_wave_equ} ``is identical with the scalar wave equation.'' The $p$-polarized wave equation involves ${\cal H}$.
+
+\section{Time Independent Wave Equation}
+Assuming electric field variables are separable,
+\begin{equation}
+E(\vec{r},t) = E(\vec{r}) e^{i\omega t}
+\label{eq:separation_of_variables_E_field}
+\end{equation}
+the field is simplified by also assuming monochromatic and continuous wave (CW). Substituting  Eq.~\ref{eq:separation_of_variables_E_field} into the right side of Eq.~\ref{eq:general_wave_equ}, time dependence can be canceled. 
+\begin{equation}
+\nabla^2 E(\vec{r}) = - \frac{\omega^2}{c^2} E(\vec{r})
+\label{eq:wave_equation_electric_field}
+\end{equation}
+where $\frac{\omega}{c}=k$. Although the following results will appear to be ``time independent,'' the time dependence can be reintroduced by multiplying both sides by $e^{i\omega t}$. Effectively the same as assuming $t=0$. 
+
+
+\section{Separation of Variables}
+Convert from general $\vec{r}$ to two-dimensional Cartesian coordinates (since the transfer matrices for a planar quasi-1D waveguide are desired): $\vec{r} = z \hat{i}+y\hat{j}$. Let $W\equiv$~width and $L\equiv$~length of waveguide.
+%\begin{equation}
+%\vec{r} = z \hat{i}+y\hat{j}
+%\end{equation}
+%and the Laplacian is
+%\begin{equation}
+%\nabla^2 = \frac{\partial^2}{\partial z^2} + \frac{\partial^2}{\partial y^2}
+%\label{eq:laplacian_cartesian}
+%\end{equation}
+
+%unjustified claim
+The $z$ and $y$ components of the field are independent, the separation of variables applies spatially.
+\begin{equation}
+E(\vec{r}) = E(z,y) = \sum^\infty_{n=1} E_n(z) \chi_n(y)
+\label{eq:spacialseparation}
+\end{equation}
+where the sum is over all channels. For $\delta$-function scatterers, there can be an infinite number of closed channels.
+
+Now the wave equation (Eq.~\ref{eq:wave_equation_electric_field}) is 
+\begin{equation}
+\nabla^2 E(z,y) = - \frac{\omega^2}{c^2} E(z,y)
+\label{eq:wave_equation_electric_field_cartesian}
+\end{equation}
+Apply Laplacian %(Eq.~\ref{eq:laplacian_cartesian}) 
+and separation (Eq.~\ref{eq:spacialseparation})
+\begin{equation}
+\sum^\infty_{n=1} \left[ \frac{\partial^2E_n(z)}{\partial z^2} \chi_n(y) + E_n(z) \frac{\partial^2 \chi_n(y)}{\partial y^2} \right] = \\
+- \frac{\omega^2}{c^2} \sum^\infty_{n=1} E_n(z) \chi_n(y)
+\label{eq:summation_variable_separation_cartesian}
+\end{equation}
+
+\section{Perpendicular Component Solution}
+The solution to the differential equation perpendicular to the direction of propagation is found from the auxiliary equation for each channel
+\begin{equation}
+\left(\frac{\partial^2}{\partial y^2} + k_{\bot n}^2 \right) \chi_n(y) = 0
+\end{equation}
+Boundary conditions for metallic waveguide: Electric field $E$ is zero at the boundaries, $\chi_n(0) = \chi_n(W) = 0$.
+%\begin{equation}
+%\chi_n(0) = \chi_n(W) = 0
+%\end{equation}
+The normalized solution is the familiar
+\begin{equation}
+\chi_n(y) = \sqrt{\frac{2}{W}} \sin (k_{\bot n} y)
+\end{equation}
+where 
+%\begin{equation}
+$k_{\bot n} \equiv \frac{n \pi}{W}$. 
+%\label{eq:k_perpendicular}
+%\end{equation}
+As a check of normalization, for $m=n$
+\begin{equation}
+\int^W_0 \chi_n^2(y) dy = \frac{2}{W} \int^W_0 \sin^2 (k_{\bot n} y) = \frac{2}{W} \frac{1}{2} W = 1
+\end{equation}
+and if $m \neq n$, solutions are orthogonal
+\begin{equation}
+\int^W_0 \chi_n(y)\chi_m(y) dy = 0
+\end{equation}
+Thus, for general $n$ and $m$,
+\begin{equation}
+\int^W_0 \chi_n(y)\chi_m(y) dy = \delta_{n,m}
+\label{eq:convert_to_kronecker}
+\end{equation}
+
+\section{Parallel Component Solution}
+For the solution parallel to the direction of propagation of Eq.~\ref{eq:wave_equation_electric_field_cartesian}, the $z$-component starts with
+\begin{equation}
+\frac{\partial^2 E_n(z)}{\partial z^2} - k_{\bot n}^2 E_n(z) = - \frac{\omega^2}{c^2} E_n(z)
+\end{equation}
+Re-arrange and introduce a new variable
+\begin{equation}
+\frac{\partial^2 E_n(z)}{\partial z^2} + k_{\parallel n}^2 E_n(z) = 0
+\label{eq:zcomponentdiffequ}
+\end{equation}
+where
+\begin{equation}
+k_{\parallel n}^2 \equiv \frac{\omega^2}{c^2} - k_{\bot n}^2
+\label{eq:k_parallel}
+\end{equation}
+Note: $k_{\parallel n}^2$ can be positive (corresponding to open channels) or negative (closed channels). If negative, then $k_{\parallel n}$ is imaginary, denoted $k_{\parallel n} = i \kappa_{\parallel n}$ for $n > N_{open}$. Open channels propagate forward, with velocity decreasing as channel index increases. Closed channels decrease in amplitude exponentially.
+
+%The summation in Eq.~\ref{eq:summation_variable_separation_cartesian} can be split into open and closed channels
+%\begin{equation}
+%\sum_{n=1}^\infty = \sum_{n=1}^{N_o} + \sum_{n=N_{o}+1}^\infty	
+%\end{equation}
+
+%\begin{tabular}{cc}
+%$ n \leq N_o $ \quad \quad \quad & $ k_{\parallel n}^2 = \frac{\omega^2}{c^2} - \left(\frac{n \pi}{W}\right)^2 > 0 $ \\
+%$ n > N_o $ \quad \quad \quad & $ k_{\parallel n}^2 < 0 $ \\
+%\end{tabular}
+
+Separate electric field components into left(-) and right (+) traveling plane waves (two solutions to the second order differential equation)
+\begin{equation}
+\begin{gathered}
+\text{Open: \ }  E_n(z) = E_n^+ \exp(i k_{\parallel n} z) + E_n^- \exp(-i k_{\parallel n} z) \\
+\text{Closed: \ }   E_n(z) = E_n^+ \exp(-\kappa_{\parallel n} z) + E_n^- \exp(\kappa_{\parallel n} z) 
+\end{gathered}
+\label{eq:Eleftandrightpropagating}
+\end{equation}
+where $i \kappa \equiv k$
+
+\section{Waveguide With Scatterers}
+Up to this point, an empty waveguide has been considered. For scattering, replace $\frac{\omega^2}{c^2}$ of the wave equation \ref{eq:wave_equation_electric_field_cartesian} with a spacial Sellmeier equation
+\begin{equation}
+\frac{\omega^2}{c^2} (1 + \alpha \delta(z-z_0,y-y_0))
+\label{eq:scatterer}
+\end{equation}
+where $\delta(z-z_0,y-y_0) \equiv \delta(z-z_0) \delta(y-y_0)$ is the scattering potential and $\alpha$ is the scattering strength. $\alpha$ can be complex; then the real part is the strength and the imaginary component is gain or absorption.
+
+%Note: this new term changes Eqs.~\ref{eq:amperes_law},\ref{eq:general_wave_equ}, and \ref{eq:wave_equation_electric_field} by introducing a non-unity refractive index.
+
+To determine transport of light past a scattering potential, apply continuity of electric field $E$ and its derivative. The following carries out matching component-wise derivative.
+
+Assuming the scattering potential is located at cross-section $z$ (inside the waveguide $0<z<L$), and the electric field just before or after the scatterer (at $z \pm \Delta$) is a sum of independent channel components.
+\begin{equation}
+E(z \pm \Delta, y) = \sum_{n=1}^\infty E_n(z \pm \Delta) \chi_n(y)
+\end{equation}
+Applying Eq.~\ref{eq:scatterer} to Eq.~\ref{eq:zcomponentdiffequ}, the wave equation becomes
+\begin{equation}
+\sum_{n=1}^\infty \left( E_n^{\prime\prime} \chi_n + k_{\parallel n}^2 E_n \chi_n + \alpha \frac{\omega^2}{c^2} \delta(z-z_0,y-y_0) E_n \chi_n \right) = 0
+\label{eq:doubleprimeEz}
+\end{equation}
+
+Multiply Eq.~\ref{eq:doubleprimeEz} by $ \chi_m $ and $ \int_0^W dy $. By applying Eq.~\ref{eq:convert_to_kronecker} and letting $A_{m,n}(y_0)=\chi_m(y_0) \chi_n(y_0)$, 
+\begin{equation}
+\sum_{n=1}^\infty \left( E_n^{\prime\prime} \delta_{nm} + k_{\parallel n}^2 E_n \delta_{nm} + \alpha \frac{\omega^2}{c^2} E_n \delta(z_0) A_{nm}(y_0)  \right) = 0 
+\end{equation}
+Apply the summation over $n$, which eliminates the Kronecker deltas.
+\begin{equation}
+ E_m^{\prime\prime} + k_{\parallel m}^2 E_m + \alpha \frac{\omega^2}{c^2} E_n \delta(z-z_0) \sum_{n=1}^\infty A_{nm}(y_0) = 0
+\end{equation}
+Integrate over $z$ from $(z-\Delta)$ to $(z+\Delta)$ and let $\Delta\rightarrow0$.
+\begin{equation}
+\begin{gathered}
+\int_{z_0-\Delta}^{z_0+\Delta} E_m^{\prime\prime}(z) dz + k_{\parallel m} ^2 \int_{z_0-\Delta}^{z_0+\Delta} 
+E_m(z) dz +\\ \alpha \frac{\omega^2}{c^2} \sum_{n=1}^\infty A_{n,m}(y_0) \int_{z_0-\Delta}^{z_0+\Delta} \delta(z_0) E_n dz = 0
+\end{gathered}
+\end{equation}
+
+To do the second term integration, assume that for small $\Delta$, $E(z) \approx E(z_0)$.  
+\begin{equation}
+E_m^{\prime}(z_0 + \Delta) - E_m^{\prime}(z_0 - \Delta) + k_{\parallel m}^2 E_m(z_0) 2 \Delta + \alpha \frac{\omega^2}{c^2} \sum_{n=1}^\infty A_{n,m}(y_0) E_n(z_0) = 0
+\end{equation}
+
+Since $\Delta \rightarrow 0$, then $2 \Delta$ is really small, so that term is dropped.
+
+To conclude, for a given channel $m$, electric field and the field derivative on both sides of the scatterer must match
+\begin{equation}
+\begin{gathered}
+%\boxed{
+E_m(z_0+\Delta) = E_m(z_0-\Delta) \\
+%}
+%\\
+%\boxed{
+E_m^{\prime}(z_0+\Delta) = E_m^{\prime}(z_0-\Delta) - \alpha \frac{\omega^2}{c^2} \sum_{n=1}^\infty A_{n,m}(y_0) E_n(z_0)
+%}
+\end{gathered}
+\end{equation}
+
+Note that the $\delta$ function scatterer has been eliminated, and $A_{n,m}$ can form an array (the ``scattering matrix'').
+
+\begin{equation}
+\begin{gathered}
+\left( \begin{array}{cc}
+\hat{I} & 0 \\
+-\alpha \frac{\omega^2}{c^2}A_{mn}(y_0) & \hat{I} \\
+\end{array} \right)
+\left( \begin{array}{c}
+E_{1..N_{max}}(z_0-\Delta) \\
+\frac{1}{\kappa_{\parallel 1..N_{max}}} E_{1..N_{max}}^{\prime}(z_0-\Delta) 
+\end{array} \right)
+=\\
+\left( \begin{array}{c}
+E_{1..N_{max}}(z_0+\Delta) \\
+\frac{1}{\kappa_{\parallel 1..N_{max}}} E_{1..N_{max}}^{\prime}(z_0+\Delta) 
+\end{array} \right)
+\end{gathered}
+\end{equation}
+Due to the form of the matrix, the determinant is always unity (only the diagonal contributes non-zero terms) regardless of the elements in the lower left quadrant. Elements of the lower left quadrant are
+\begin{equation}
+ -\alpha \frac{\omega^2}{c^2} \frac{2}{W} \sin(k_{\perp m} y_0) \sin(k_{\perp n} y_0)
+\end{equation}
+Note that the scattering matrix is real unless $\alpha$ or $\omega$ are complex.
+
+\section{Free Space Propagation of Open Channels}
+For open channels ($n \leq N_o$), field $E_n$ and derivative of field $ \frac{1}{k_{\parallel n}}E_n^{\prime}$ are more convenient basis than ``left traveling'' $E_n^-(z)$ and ``right traveling'' $E_n^+(z)$. First, the connection between the two basis is found. Starting from Eq.~\ref{eq:Eleftandrightpropagating}, electric field $E(z)$ is the solution to a second order differential equation, so it has two solutions.
+\begin{equation}
+\begin{gathered}
+E_n(z) = E_n^+ \exp(i k_{\parallel n} z) + E_n^- \exp(-i k_{\parallel n} z) \\
+E_n^{\prime}(z) = i k_{\parallel n} E_n^+ \exp(i k_{\parallel n} z) - i k_{\parallel n}E_n^- \exp(-i k_{\parallel n} z)
+\label{eq:Eleftandrightpropagating_again}
+\end{gathered}
+\end{equation}
+Solving for left- and right-traveling wave components,
+\begin{equation}
+\begin{gathered}
+E_n^+(z) = \frac{1}{2} \left( E_n(z)+\frac{1}{i} \frac{1}{k_{\parallel n}} E_n^{\prime}(z) \right) \exp(-i k_{\parallel n} z) \\ 
+E_n^-(z) = \frac{1}{2} \left( E_n(z)-\frac{1}{i} \frac{1}{k_{\parallel n}} E_n^{\prime}(z) \right) \exp(i k_{\parallel n} z) 
+\label{eq:Eleftright}
+\end{gathered}
+\end{equation}
+
+To preemptively clear up notation confusion, in previous steps $\Delta$ was used to denote a small ($\Delta \rightarrow 0$) distance from the scatterer. Here $\Delta z$ will be used to signify a finite displacement in position along the $z$ axis. 
+
+The field and derivative of field is translated over distance $\Delta z$ from the original position $z$. First, substitute the shift into Eq.~\ref{eq:Eleftandrightpropagating_again}
+\begin{equation}
+E_n(z+\Delta z) = E_n^+ \exp(i k_{\parallel n} (z+\Delta z)) + E_n^- \exp(-i k_{\parallel n} (z+\Delta z)) 
+\end{equation}
+Then substitute Eq.~\ref{eq:Eleftright}
+\begin{equation}
+\begin{gathered}
+E_n(z+\Delta z) = \frac{1}{2} \left( E_n(z) + \frac{1}{i} \frac{1}{k_{\parallel n}} E_n^{\prime}(z) \right) \exp(i k_{\parallel n} z) + \\
+\frac{1}{2} \left( E_n(z) - \frac{1}{i} \frac{1}{k_{\parallel n}} E_n^{\prime}(z) \right) \exp(-i k_{\parallel n} z) 
+\end{gathered}
+\end{equation}
+Reducing leaves how to shift an electric field over distance $\Delta z$.
+\begin{equation}
+%\boxed{
+E_n(z+\Delta z) =E_n(z) \cos(k_{\parallel n} \Delta z) + \frac{1}{k_{\parallel n}} E_n^{\prime} \sin(k_{\parallel n} \Delta z) 
+%}
+\label{eq:open_channel_field_transfer}
+\end{equation}
+Similarly,
+\begin{equation}
+\frac{1}{k_{\parallel n}} E_n^{\prime}(z+\Delta z) = i E_n^+ \exp(i k_{\parallel n} (z+\Delta z)) -i E_n^- \exp(-i k_{\parallel n} (z+\Delta z))
+\end{equation}
+Then substitute Eq.~\ref{eq:Eleftright}
+\begin{equation}
+\begin{gathered}
+\frac{1}{k_{\parallel n}} E_n^{\prime}(z+\Delta z) =
+\frac{i}{2} \left( E_n(z) + \frac{1}{i} \frac{1}{k_{\parallel n}} E_n^{\prime}(z) \right) \exp(i k_{\parallel n} z) -\\
+\frac{i}{2} \left( E_n(z) - \frac{1}{i} \frac{1}{k_{\parallel n}} E_n^{\prime}(z) \right) \exp(-i k_{\parallel n} z) 
+\end{gathered}
+\end{equation}
+
+\begin{equation}
+%\boxed{
+\frac{1}{k_{\parallel n}} E^{\prime}(z+\Delta z)=- E_n(z) \sin(k_{\parallel n} \Delta z) + \frac{1}{k_{\parallel n}} E_n^{\prime} \cos(k_{\parallel n} \Delta z) 
+%}
+\label{eq:open_channel_deriv_transfer}
+\end{equation}
+
+\section{Free-space Propagation of Closed Channels}
+For closed channels ($n > N_o$), change of $i$ results in hyperbolic trig functions.
+\begin{equation}
+\begin{gathered}
+E_n(z) = E_n^+ \exp(-\kappa_{\parallel n} z) + E_n^- \exp(\kappa_{\parallel n} z) \\
+E_n^{\prime}(z) = -\kappa_{\parallel n} E_n^+ \exp(-\kappa_{\parallel n} z) + \kappa_{\parallel n}E_n^- \exp(\kappa_{\parallel n} z)
+\end{gathered}
+\end{equation}
+Recalling that $k_{\parallel n} = i \kappa_{\parallel n}$, then
+\begin{equation}
+\begin{gathered}
+E_n^+(z) = \frac{1}{2} \left( E_n(z)- \frac{1}{\kappa_{\parallel n}} E_n^{\prime}(z) \right) \exp(\kappa_{\parallel n} z) \\ 
+E_n^-(z) = \frac{1}{2} \left( E_n(z)+ \frac{1}{\kappa_{\parallel n}} E_n^{\prime}(z) \right) \exp(-\kappa_{\parallel n} z) 
+\end{gathered}
+\end{equation}
+
+Shifting the field by $\Delta z$
+%\begin{equation}
+%E_n(z+\Delta z) = E_n^+ \exp(-\kappa_{\parallel n}(z+\Delta z)) + E_n^- \exp(\kappa_{\parallel n}(z+\Delta z))
+%\end{equation}
+%\begin{equation}
+%E_n(z+\Delta z) = \frac{1}{2} \left( E_n(z)- \frac{1}{\kappa_{\parallel n}} E_n^{\prime}(z) \right) \exp(-\kappa_{\parallel n} z) +  
+%\frac{1}{2} \left( E_n(z)+ \frac{1}{\kappa_{\parallel n}} E_n^{\prime}(z) \right) \exp(\kappa_{\parallel n} z) 
+%\end{equation}
+\begin{equation}
+%\boxed{
+E_n(z+\Delta z) = E_n(z) \cosh(\kappa_{\parallel n}\Delta z) + \frac{1}{\kappa_{\parallel n}} E_n^{\prime}(z) \sinh(\kappa_{\parallel n}\Delta z)
+%}
+\end{equation}
+and
+%\begin{equation}
+%\frac{1}{\kappa_{\parallel n}}E_n^{\prime}(z+\Delta z) = -E_n^+ \exp(-\kappa_{\parallel n}(z+\Delta z)) + E_n^- \exp(\kappa_{\parallel n}(z+\Delta z)) 
+%\end{equation}
+%\begin{equation}
+%\begin{gathered}
+%\frac{1}{\kappa_{\parallel n}}E_n^{\prime}(z+\Delta z) =-\frac{1}{2} \left( E_n(z)- \frac{1}{\kappa_{\parallel n}} E_n^{\prime}(z) \right) \exp(-\kappa_{\parallel n} z) + \\
+%\frac{1}{2} \left( E_n(z)+ \frac{1}{\kappa_{\parallel n}} E_n^{\prime}(z) \right) \exp(\kappa_{\parallel n} z) 
+%\end{gathered}
+%\end{equation}
+\begin{equation}
+%\boxed{
+\frac{1}{\kappa_{\parallel n}}E_n^{\prime}(z+\Delta z) =E_n(z) \sinh(\kappa_{\parallel n}\Delta z) + \frac{1}{\kappa_{\parallel n}} E_n^{\prime}(z) \cosh(\kappa_{\parallel n}\Delta z)
+%}
+\end{equation}
+
+To summarize,
+\begin{equation}
+\begin{gathered}
+E_n(z+\Delta z) = E_n(z) \cosh(\kappa_{\parallel n}\Delta z) + \frac{1}{\kappa_{\parallel n}} E_n^{\prime}(z) \sinh(\kappa_{\parallel n}\Delta z) \\
+\frac{1}{\kappa_{\parallel n}}E_n^{\prime}(z+\Delta z) =E_n(z) \sinh(\kappa_{\parallel n}\Delta z) + \frac{1}{\kappa_{\parallel n}} E_n^{\prime}(z) \cosh(\kappa_{\parallel n}\Delta z)
+\label{eq:closed_channel_transfer}
+\end{gathered}
+\end{equation}
+
+From Eq.~\ref{eq:open_channel_field_transfer}, \ref{eq:open_channel_deriv_transfer}, and \ref{eq:closed_channel_transfer} the ``free space propagation matrix'' can be constructed. The array would be of rank $2 n_{max}$ ($n_{max}=N_o+N_c$). The determinant of this matrix is alway unity (regardless of argument) because terms can be factored into $\sin^2x +\cos^2=1$ for each channel. Thus, for both free and scattering matrices, the determinant is unity regardless of free space separation $\Delta z$ or real (passive) and complex (active media) dielectric values.
+
+With this description of matrices for scattering planes and for free space propagation, the transmission of electric field and its derivative can be computed for a metallic waveguide containing arbitrarily placed scatterers. The set of matrices is multiplied together to form a matrix $\hat{S}$ of size $2n_{max}$. Then the vector describing the initial incident field and derivative of field for each channel $n$ is multiplied by $\hat{S}$ to give the transmission and reflection matrices (one vector for each channel $n$).
+
+This approach of multiply matrices together inherently results in numerical instability~\cite{1968_Osedelec} due to the limited precision of computational devices. Therefore, the self-embedding technique~\cite{1999_yamilov_selfembed,1976_Bellman_Wing_embedding} is used to periodically renormalize the product.
+
+\begin{comment}
+\begin{equation}
+\left( \begin{array}{cccccccc}
+\cos(k_{\parallel 1}\Delta z)   & 0 & 0 & 0 & \sin(k_{\parallel 1}\Delta z)   & 0 & 0 & 0 \\
+0 & \cos(k_{\parallel N_0}\Delta z) & 0 & 0 & 0 & \sin(k_{\parallel N_0}\Delta z) & 0 & 0 \\
+
+0 & 0 & \cosh(k_{\parallel N_0+1}\Delta z)   & 0 & 0 & 0 & \sinh(k_{\parallel n}\Delta z) & 0  \\
+0 & 0 & 0 & \cosh(k_{\parallel n_{max}}\Delta z) & 0 & 0 & 0 & \sinh(k_{\parallel n}\Delta z) \\
+
+-\sin(k_{\parallel n}\Delta z) & 0 & \cos(k_{\parallel n}\Delta z) & 0 \\
+-\sin(k_{\parallel n}\Delta z) & 0 & \cos(k_{\parallel n}\Delta z) & 0 \\
+
+0 & \sinh(k_{\parallel n}\Delta z) & 0 & \cosh(k_{\parallel n}\Delta z) \\
+0 & \sinh(k_{\parallel n}\Delta z) & 0 & \cosh(k_{\parallel n}\Delta z) \\
+\end{array} \right)
+\end{equation}
+
+\begin{equation}
+\left( \begin{array}{cccc}
+\cos(k_{\parallel 1..N_0}\Delta z)  & 0 & \sin(k_{\parallel 1}\Delta z) & 0 \\
+0 & \cosh(k_{\parallel N_0+1..n_{max}}\Delta z) & 0 & \sinh(k_{\parallel N_0+1..n_{max}}\Delta z)  \\
+-\sin(k_{\parallel 1..N_0}\Delta z) & 0 & \cos(k_{\parallel 1..N_0}\Delta z) & 0 \\
+0 & \sinh(k_{\parallel N_0+1..n_{max}}\Delta z) & 0 & \cosh(k_{\parallel N_0+1..n_{max}}\Delta z) \\
+\end{array} \right)
+\left( \begin{array}{c}
+E_1 \\
+\vdots \\
+E_N \\	
+E_{N+1} \\
+\vdots \\
+E_{N_{max}} \\
+\frac{1}{k_{\parallel 1}} E_1^{\prime} \\
+\vdots \\
+\frac{1}{k_{\parallel N}} E_N^{\prime} \\
+\frac{1}{\kappa_{\parallel N+1}} E_{N+1}^{\prime} \\
+\vdots \\
+\frac{1}{\kappa_{\parallel N_{max}}} E_{N_{max}}^{\prime} 
+\end{array} \right)
+\end{equation}
+Note that the derivative portion of the free space propagation is where ``energy loss'' occurs (in passive $N_{open}$ systems). 
+
+
+\section{Boundary Condition}
+
+\begin{equation}
+v(z) = 
+\left( \begin{array}{c}
+E_1 \\
+\vdots \\
+E_N \\	
+E_{N+1} \\
+\vdots \\
+E_{N_{max}} \\
+\frac{1}{k_{\parallel 1}} E_1^{\prime} \\
+\vdots \\
+\frac{1}{k_{\parallel N}} E_N^{\prime} \\
+\frac{1}{\kappa_{\parallel N+1}} E_{N+1}^{\prime} \\
+\vdots \\
+\frac{1}{\kappa_{\parallel N_{max}}} E_{N_{max}}^{\prime} 
+\end{array} \right)
+= \left( \begin{array}{c}
+\vec{E}_{open}(z) \\
+\vec{E}_{closed}(z) \\
+\vec{D}_{open}(z) \\
+\vec{D}_{open}(z) \\
+\end{array} \right)
+\end{equation}
+
+\begin{equation}
+\hat{M}(0,L) \vec{v}(0) = \vec{v}(L)
+\end{equation}
+
+\begin{equation}
+ E(y,z,t) = \left\{
+\begin{array}{l l}
+E_{in} e^{i(\vec{r}\cdot \vec{k} - \omega t)} + E_{r} e^{-i(\vec{r}\cdot \vec{k} + \omega t)} & \quad \mbox{ if $x<0$} \\
+E_t e^{i(\vec{r}\cdot \vec{k} - \omega t)}  & \quad \mbox{ if $x>L$} \\ \end{array} \right.
+\end{equation}
+
+The transmission coefficient is $T=\frac{|E_t|^2}{|E_{in}|^2}$.
+\end{comment}
+

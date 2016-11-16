@@ -1,0 +1,70 @@
+\section{1D transfer matrix and A,B}
+We derive the transfer matrix for a 1D dielectric layer of length $a_1$ and index of refraction $n_1$. The block of material ``1'' is adjacent to another block ``0'' which contains the incident wave. The boundary conditions at each layer edge are that the electric field and the derivative match.
+\begin{equation}
+\begin{gathered}
+E_o = E_1\\
+\frac{dE_o}{dx} = \frac{dE_1}{dx}
+\end{gathered}
+\end{equation}
+The general wave function $E=A \exp(-i k n x) + B \exp(i k n x)$ and its derivative must match coefficents: $A_o, B_o$ at $x=0$ with $A_1, B_1$ at $x=a_1$.
+\begin{equation}
+\begin{gathered}
+A_o + B_o = A_1 \exp(-i k n_1 a_1) + B_1 \exp(i k n_1 a_1)\\
+i k n_o (A_o - B_o) = i k n_1 (A_1 \exp(-i k n_1 a_1) - B_1 \exp(i k n_1 a_1))
+\end{gathered}
+\label{eq:match_field_deriv}
+\end{equation}
+The goal is to solve for $A_1$,$B_1$ in terms of $A_0$,$B_0$ and get the general form
+\begin{equation}
+\begin{gathered}
+A_1 = A_o T_{11} + B_o T_{12} \\
+B_1 = A_o T_{21} + B_o T_{22}
+\end{gathered}
+\end{equation}
+The matrix $T$ will be the transfer of field from $A_0$,$B_0$ to $A_1$,$B_1$. First, rewrite Eq.~\ref{eq:match_field_deriv} as
+\begin{equation}
+\begin{gathered}
+(A_o + B_o) \exp(-i k n_1 a_1) = A_1 \exp(-2 i k n_1 a_1) + B_1 \\
+i k n_o (A_o - B_o) \exp(-i k n_1 a_1) = A_1 \exp(-2 i k n_1 a_1) - B_1
+\label{fig:terms}
+\end{gathered}
+\end{equation}
+Then Eq.~\ref{fig:terms} sums to
+\begin{equation}
+(A_o + B_o) \exp(-i k n_1 a_1) + \frac{i k n_o}{i k n_1} (A_o - B_o) \exp(-i k n_1 a_1) = 2 A_1 \exp(-2 i k n_1 a_1)
+\end{equation}
+Solve for $A_1$ in terms of $A_o$ and $B_o$. The coefficents of $A_o$ and $B_o$ are $T_{11}$ and $T_{12}$.
+\begin{equation}
+\begin{gathered}
+T_{11} = \frac{1}{2} (1 + \frac{n_o}{n_1} ) \exp(i k n_1 a_1) \\
+T_{12} = \frac{1}{2} (1 - \frac{n_o}{n_1} ) \exp(i k n_1 a_1)
+\end{gathered}
+\end{equation}
+Similarly, solve for $B_1$ in terms of $A_o$ and $B_o$. The coefficents of $A_o$ and $B_o$ are $T_{21}$ and $T_{22}$.
+\begin{equation}
+\begin{gathered}
+T_{21} = \frac{1}{2} (1 - \frac{n_o}{n_1} ) \exp(-i k n_1 a_1) \\
+T_{22} = \frac{1}{2} (1 + \frac{n_o}{n_1} ) \exp(-i k n_1 a_1)
+\end{gathered}
+\end{equation}
+These are the matrix elements for the transfer matrix.
+\begin{equation}
+T = \left[
+\begin{array}{cc}
+\frac{1}{2} (1 + \frac{n_o}{n_1} ) \exp(i k n_1 a_1) & \frac{1}{2} (1 - \frac{n_o}{n_1} ) \exp(i k n_1 a_1)\\
+\frac{1}{2} (1 - \frac{n_o}{n_1} ) \exp(-i k n_1 a_1) & \frac{1}{2} (1 + \frac{n_o}{n_1} ) \exp(-i k n_1 a_1)
+\end{array}
+\right]
+\end{equation}
+
+As a check, the determinant of $T$ is 1. Physically, this is conservation of flux.
+
+?Transformation from A,B to the field and its derivative basis gives the following transfer matrix:
+\begin{equation}
+\left[
+\begin{array}{cc}
+\cos(k n x) & \frac{1}{n}\sin(k n x) \\
+-n \sin(k n x) & \cos(k n x)
+\end{array}
+\right]
+\end{equation}

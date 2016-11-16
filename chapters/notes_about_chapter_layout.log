@@ -1,0 +1,13 @@
+
+
+"oned.tex" is from "draft1.6.1_manuscript.tex" prior to SVN
+
+the appendices originally in "draft1.6.1_manuscript.tex" were removed and put in their own seperate tex files so that they could be referenced elsewhere
+
+
+
+"quasi1d.tex" is from SVN 361
+
+
+to learn more about embedding tex files within tex files, 
+http://www.ics.mq.edu.au/~rdale/resources/writingnotes/latexstruct.html

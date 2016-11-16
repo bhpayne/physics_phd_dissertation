@@ -1,0 +1,126 @@
+\section{closed channel transfer matrix folding}
+
+Now that we have a matrix of size $(N+N_c)x(N+N_c)$ it would be convenient to be able to represent it as a matrix of size $NxN$.  We will call this reduction "folding" as we are folding the closed channels into a smaller matrix. There is conservation of information in this matrix of reduced rank as the elements are messier.  The folding operation occurs one closed channel at a time, but it is shown by a recursion relation that the operation can be done by induction for an infinite number of closed channels.
+
+Bagwell does the operation but gives an incorrect recursion relation. See~\cite{1990_Bagwell} page 358, equation 25.
+
+dealing with a 4x4 matrix (2 open and 2 closed channels), solve for $t_{24}$ in the fourth equation:
+\begin{equation}
+t_{24} = -\frac{\Gamma_{41}}{\Gamma_{44}+2\kappa_4} t_{21} + 
+         -\frac{\Gamma_{42}}{\Gamma_{44}+2\kappa_4} t_{22} +
+         -\frac{\Gamma_{43}}{\Gamma_{44}+2\kappa_4} t_{23}
+\end{equation}
+then plug that into the three remaining equations. Group like terms
+\begin{equation}
+0 = ((\Gamma_{11}-\frac{\Gamma_{14}\Gamma_{41}}{\Gamma_{44}+2 \kappa_4}) - 2 i k_1)t_{21} + 
+     (\Gamma_{12}-\frac{\Gamma_{14}\Gamma_{42}}{\Gamma_{44}+2 \kappa_4})t_{22} + 
+     (\Gamma_{13}-\frac{\Gamma_{14}\Gamma_{43}}{\Gamma_{44}+2 \kappa_4})t_{23}  
+\end{equation}
+Now we can write a 3x3 matrix
+\begin{equation}
+ \left( \begin{array}{c}
+0 \\
+-2 i k_2 \\
+0 \end{array} \right) =
+ \left( \begin{array}{cccc}
+(\Gamma_{11}-\frac{\Gamma_{14}\Gamma_{41}}{\Gamma_{44}+2 \kappa_4})-2 i k_1 &
+(\Gamma_{12}-\frac{\Gamma_{14}\Gamma_{42}}{\Gamma_{44}+2 \kappa_4})           & 
+(\Gamma_{13}-\frac{\Gamma_{14}\Gamma_{43}}{\Gamma_{44}+2 \kappa_4})            \\
+(\Gamma_{21}-\frac{\Gamma_{24}\Gamma_{41}}{\Gamma_{44}+2 \kappa_4})         &
+(\Gamma_{22}-\frac{\Gamma_{24}\Gamma_{42}}{\Gamma_{44}+2 \kappa_4})-2 i k_2 &
+(\Gamma_{23}-\frac{\Gamma_{24}\Gamma_{43}}{\Gamma_{44}+2 \kappa_4})              \\
+(\Gamma_{31}-\frac{\Gamma_{34}\Gamma_{41}}{\Gamma_{44}+2 \kappa_4})         &
+(\Gamma_{32}-\frac{\Gamma_{34}\Gamma_{42}}{\Gamma_{44}+2 \kappa_4})         &
+(\Gamma_{33}-\frac{\Gamma_{34}\Gamma_{43}}{\Gamma_{44}+2 \kappa_4})+2 i \kappa_3 \end{array} \right)
+ \left( \begin{array}{c}
+t_21 \\
+t_22 \\
+t_23 \end{array} \right) 
+\label{singlescattererfirstfold}
+\end{equation}
+observe the recursion relation
+\begin{equation}
+\Gamma_{ij,4} = \Gamma_{ij} - \frac{\Gamma_{i4}\Gamma_{4j}}{\Gamma_{44}+2 \kappa_4}
+\end{equation}
+which generalizes to a recursion relation
+\begin{equation}
+\Gamma_{ij}^{(n)} = \Gamma_{ij}^{(n+1)} - \frac{\Gamma_{i(n+1)}^{(n+1)}
+\Gamma_{(n+1)j}^{(n+1)}}{\Gamma_{(n+1)(n+1)}^{(n+1)}+2 \kappa_{(n+1)}}
+\end{equation}
+Things to keep in mind: multiplying folded matrices is not equivalent to multiplying large matrices and then folding.  This recursion relation demonstrates that an infinite number of closed channels can be accounted for (with the proper normalization).
+% see Ben's notes, 20080618
+Now we'll repeat the process of folding for the general one scatterer matrix for N open channels and $N_c$ closed channels.
+\begin{equation}
+\left(
+\left( \begin{array}{ccc}
+\hat{\Gamma}_{pp} & | & \hat{\Gamma}_{pq} \\
+--- & + & --- \\
+\hat{\Gamma}_{qp} & | &  \hat{\Gamma}_{qq} \end{array}
+\right) - 2 i 
+\left( \begin{array}{cccc}
+k_1 &     &        & 0         \\
+    & k_2 &        &           \\
+    &     & \ddots &           \\
+  0 &     &        & k_{N+N_c} \end{array} 
+\right)
+\right)
+\left( \begin{array}{c}
+\vec{t}_p \\
+\vec{t}_q\end{array} 
+\right) = free terms from input
+\end{equation}
+where if $n>N$ then $k=i\kappa$. 
+
+Do the bottom half (closed channels only) of the matrix multiplication,
+\begin{equation}
+\hat{\Gamma}_{qp} \vec{t}_p + (\hat{\Gamma}_{qq} + 2 \hat{\kappa}_q)\vec{t}_q =
+\left( \begin{array}{c}
+	0 \\
+	\vdots \\
+	0 \end{array}
+\right)_q
+\end{equation}
+Zeros on the left since the evanescent modes can not have inputs. No $k$ dependence since there are no diagonal elements.
+
+Solve for $\vec{t}_q$,
+\begin{equation}
+(\Gamma_{qq}+2 \vec{\kappa}_q) \vec{t}_q = - \hat{\Gamma}_qp \vec{t}_p
+\end{equation}
+
+\begin{equation}
+\vec{t}_q = -(\hat{\Gamma}_{qq} + 2 \hat{\kappa}_q)^{-1} (\hat{\Gamma}_{qp} \vec{t}_p)
+\end{equation}
+
+Now it's time for the upper set (open channels)
+\begin{equation}
+free terms = (\hat{\Gamma}_{pp}-2 i \hat{k}_p)\vec{t}_p + \hat{\Gamma}_{pq} \vec{t}_q
+\end{equation}
+plug into $\vec{t}_q$
+\begin{equation}
+free terms = (\hat{\Gamma}_{pp}-2 i \hat{k}_p)\vec{t}_p - \hat{\Gamma}_{pq} 
+((\hat{\Gamma}_{qq}+2 \vec{\kappa}_q)^{-1})(\hat{\Gamma}_{qp} \vec{t}_p)
+\end{equation}
+factor out $\vec{t}_p$
+\begin{equation}
+free terms = ((\hat{\Gamma}_{pp}-2 i \hat{k}_p)\vec{t}_p - \hat{\Gamma}_{pq} 
+((\hat{\Gamma}_{qq}+2 \vec{\kappa}_q)^{-1})\hat{\Gamma}_{qp}) \vec{t}_p
+\end{equation}
+which compared to equation B8 in \cite{2007_Froufe-Perez_PRE}
+
+\begin{equation}
+\hat{\tilde{U}}_{pp} = \hat{U}_{pp} - \hat{U}_{pq} 
+\frac{1}{\sqrt{2 \vec{\kappa}_Q}}\frac{1}{I+
+\frac{1}{\sqrt{2 \kappa_Q}}\hat{U}_{QQ}\frac{1}{\sqrt{2 \kappa_Q}} }
+\frac{1}{\sqrt{2 \kappa_Q}}\hat{U}_{QP}
+\end{equation}
+
+\begin{equation}
+\hat{\tilde{U}}_{pp} = \hat{U}_{pp} - \hat{U}_{pq}
+\frac{1}{I 2 \vec{\kappa}_Q + 2 \vec{\kappa}_Q \hat{U}_{QQ}}\hat{U}_{QP}
+\end{equation}
+
+\begin{equation}
+\hat{\tilde{U}}_{pp} = \hat{U}_{pp} - \hat{U}_{pq} (2 \kappa_Q + U_{QQ})^{-1} U_{QP}
+\end{equation}
+
+They match!

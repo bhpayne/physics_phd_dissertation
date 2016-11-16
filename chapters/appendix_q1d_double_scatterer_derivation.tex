@@ -1,0 +1,128 @@
+\section{two scatterer folding}
+
+Two scatterers: incident is A, reflected is B, and transmitted is G. Between are C (forward) and D (backward).
+
+% see notes, 20080619
+First, boundary conditions match for the amplitudes and the derivatives, where n is the single incident channel, which scatters into channels m. For the first scatterer,
+\begin{equation}
+\begin{gathered}
+A_n \delta_{mn} + B_m = C_m+D_m \\
+(i k_m C_m-i k_m D_m) - (i k_m \delta_{nm}^{(1)} A_m-i k_m B_m) = 
+\sum_{m'} \Gamma_{mm'} (A_n \delta_{nm'}+B_{m'})
+\end{gathered}
+\end{equation}
+and similarly for the second scatterer, which is at x=a instead of zero,
+\begin{equation}
+\begin{gathered}
+C_m \exp(i k_m a) + D_m \exp(-i k_m a) = G \exp(i k_m a) \\
+(i k G_m \exp(i k_m a)-(i k_m C_m \exp(i k_m a) - i k_m D_m \exp(-i k_m a)) = 
+\sum_{m'} \Gamma_{mm'}^{(2)} G_{m'} \exp(i k_{m'} a)
+\label{matchatxequalsa}
+\end{gathered}
+\end{equation}
+the k variable is a matrix of diagonal elements indexed by channel number
+\begin{equation}
+\hat{k}_{nn} = \sqrt{(\frac{2 \pi}{\lambda})^2 -(\frac{\pi n}{w})^2}
+\end{equation}
+where n goes from 1 to $N+N_c$
+
+\begin{equation}
+\begin{gathered}
+C_m +D_m = \delta_{mn} A_m+B_m \\
+C_m -D_m = A_m \delta_{mn} - B_m +\frac{1}{i k_m} \sum_{m'} 
+\Gamma_{mm'}^{(1)} (\delta_{nm'} A_{m'}+B_{m'})
+\end{gathered}
+\end{equation}
+Solve for $C_m$ and $D_m$ at x = 0.
+\begin{comment}
+use
+x+y=A
+x-y=B
+==>  2x = A+B
+====> x = (A+B)/2
+repeat for y
+\end{comment}
+
+\begin{equation}
+\begin{gathered}
+C_m = A_m \delta_{nm} + \frac{1}{2 i k_m}\sum_{m'}\Gamma_{mm'}^{(1)} 
+(\delta_{nm'} A_{m'}+B_{m'}) \\
+D_m = B_m - \frac{1}{2 i k_m}\sum_{m'}\Gamma_{mm'}^{(1)} 
+(\delta_{nm'} A_{m'}+B_{m'})
+\end{gathered}
+\end{equation}
+\begin{equation}
+\begin{gathered}
+A_m \delta_{nm} \exp(i k_m a)+B_m \exp(-i k_m a) + 
+\frac{1}{k_m}(\sum_{m'}\Gamma_{mm'}^{(1)}(\delta_{nm'} A_{m'}+B_{m'})) sin(k_m a) = \\
+G_m \exp(i k_m a) \\
+G_m \exp(i k_m a) - (A_m \delta_{nm} \exp(i k_m a)-B_m \exp(-i k_m a) + 
+\frac{1}{i k_m}(\sum_{m'}\Gamma_{mm'}^{(1)}(\delta_{nm'} A_{m'}+B_{m'})) cos(k_{m'} a) = \\
+\frac{1}{i k_m}(\sum_{m'}\Gamma_{mm'}^{(2)} G_{m'} \exp(i k_{m'} a)) \\
+\end{gathered}
+\end{equation}
+divide everything by $A_m$ to get normalized incident wave
+\begin{equation}
+\begin{gathered}
+\delta_{nm} \exp(i k_m a)+r_{mn} \exp(-i k_m a) + 
+\frac{1}{k_m}(\sum_{m'}\Gamma_{mm'}^{(1)}(\delta_{nm'}+r_{nm'})) sin(k_m a) = \\
+t_{nm} \exp(i k_m a) \\
+t_{nm} \exp(i k_m a) - (\delta_{nm} \exp(i k_m a)-r_{mn} \exp(-i k_m a) + 
+\frac{1}{i k_m}(\sum_{m'}\Gamma_{mm'}^{(1)}(\delta_{nm'}+r_{nm'})) cos(k_{m'} a) = \\
+\frac{1}{i k_m}(\sum_{m'}\Gamma_{mm'}^{(2)} t_{nm'} \exp(i k_{m'} a)) \\
+\end{gathered}
+\end{equation}
+where 
+\begin{equation}
+\begin{gathered}
+\frac{B}{A} \equiv r_{nm} \\
+\frac{G}{A} \equiv t_{nm}
+\end{gathered}
+\end{equation}
+Now we'll switch from indexed variable to matrix notation
+
+\begin{equation}
+\begin{gathered}
+(\exp(-i \hat{k} a)+\hat{k}^{-1} sin(\hat{k} a) \hat{\Gamma}) \vec{r} + 
+(-\exp(i \hat{k} a)) \vec{t} = \\
+-(\exp(i \hat{k} a +\hat{k}^{-1} sin(\hat{k} a) \hat{\Gamma}) \vec{h}\\
+(\exp(-i \hat{k} a)+i \hat{k}^{-1} cos(\hat{k} a) \hat{\Gamma}) \vec{r} + 
+(\exp(i \hat{k} a)+i \hat{k}^{-1} \exp(i \hat{k} a) \hat{\Gamma}) \vec{t} = \\
+(\exp(i \hat{k} a)-i \hat{k}^{-1} cos(\hat{k} a) \hat{\Gamma}) \vec{h}
+\end{gathered}
+\end{equation}
+we clump the coefficients in that big mess to another indexed variable, ``F''.
+\begin{equation}
+\begin{gathered}
+\hat{F_1} \vec{r}+\hat{F_2} \vec{t}=\hat{F_3} \vec{h} \\
+\hat{F_4} \vec{r}+\hat{F_5} \vec{t}=\hat{F_6} \vec{h}
+\end{gathered}
+\end{equation}
+
+solve for $\vec{r}$, set the two equal
+\begin{equation}
+\begin{gathered}
+(\hat{F_1}^{-1} \hat{F_3}-\hat{F_4}^{-1} \hat{F_6}) \vec{h} = 
+(\hat{F_1}^{-1} \hat{F_2}-\hat{F_4}^{-1} \hat{F_5}) \vec{t}
+\end{gathered}
+\end{equation}
+then solve for $\vec{h}$ in terms of $\vec{t}$
+\begin{equation}
+\vec{h} = (\hat{F_1}^{-1} \hat{F_3} - \hat{F_4}^{-1} \hat{F_6})^{-1}
+(\hat{F_1}^{-1} \hat{F_2} - \hat{F_4}^{-1} \hat{F_5}) \vec{t}
+\end{equation}
+and we'll call that big messy matrix, which has dimension $(N+N_c)x(N+N_c)$,
+\begin{equation}
+(\hat{F_1}^{-1} \hat{F_3} - \hat{F_4}^{-1} \hat{F_6})^{-1}
+(\hat{F_1}^{-1} \hat{F_2} - \hat{F_4}^{-1} \hat{F_5}) \equiv
+\hat{I}+\frac{i}{2}\hat{k}^{-1}\Gamma^{combined}
+\end{equation}
+Solving for $\Gamma^{combined}$, 
+\begin{equation}
+\Gamma^{combined} = -i 2\hat{k}(((\hat{F_1}^{-1} \hat{F_3} - \hat{F_4}^{-1} \hat{F_6})^{-1}
+(\hat{F_1}^{-1} \hat{F_2} - \hat{F_4}^{-1} \hat{F_5})) - \hat{I})
+\end{equation}
+
+Now we have a general algorithm for combining any two $\Gamma$ matrices, either two reduced (open channels only, (NxN)) or two unreduced (open and closed channels, (($N+N_c$)x($N+N_c$))). 
+
+Using this ``gamma combiner'' algorithm with the above ``gamma reducer'' algorithm we can numerically compute how the two are different, and how separation (density in many scatterers) is affected when N varies, when $N_c$ is include or not.

@@ -1,0 +1,40 @@
+ VALUE   		NUM	OUTPUT FILE				LOGICAL			DESCRIPTION
+.false.  		126	%rlz%_accuracy.dat			writeAccuracy
+.false.  		127	running_status.dat			writeRunningStatus
+.false. .false. 		121,2	%rlz%_{Reflection,Trans}_matrix.dat	writeReflectionMatrix, writeTransmissionMatrix
+.false. .false.		100	%rlz%_Medium.dat		  	writeMedium, readMedium | instead of writing a medium, use previously recorded output
+.false.			101,2	%rlz%_detFreeScat, %rlz%_detChunk	writeDeterminats
+.false.			124	%rlz%_TmRm_det.dat			writeTmRmDet		| determinant of Tm, Rm
+.false.   		103,4	%rlz%_Tm.dat,out_%rlz%_Rm.dat  		writeSelfEmbedTmRm
+.false.   		131	%rlz%_ScatFreeMatrix.dat  		writeScatFreeMatrix	| Scattering, Free, and Chunk Matrices
+.true.	 		134	finished.status 			writeFinish
+.true.	 		135	frequencies.dat				writeFrequency
+.true.	.false.		137,167	gains.dat	  			writeGain, read gain
+.true.  .true. 		140  						findElecField, doefse	| necessary for AB coef,T,E,conductance | "do electric field self-embedding"
+.true.  	          						findeignvalues
+.false.	.false.		129,136	%rlz%_elecField.dat,%rlz%_elecField_error.dat	writeElecField, writeElecFieldError | vectors after each scatterer
+.false. .false.		140	%rlz%_ABCoefficients.dat		writeABCoefficientsUF, writeABCoefficientsPW | requires that findElecField be true
+.true.  .true. 	 						findJWDplanewave, findJWDunitflux 
+.true.  .false. 	144-5,3	JWD_{summed,averaged},%rlz%_JWD.dat   	writeSummedJW, writeEachJW
+.true. .true.		152,3,4,5 156,7,8,9 {J,W}_chan_{sum,ave},pw_{J,W}_chan_{sum,ave}	writeufJWDchan writepwJWDchan
+.true.   		130	%rlz%_num_ran2_calls.dat		pausable
+.true.  .true.  .true.	146,7						writeTEuf, writegEuf, writegEpw
+.false. .false. .false. 148,9	%rlz%_crit_gain,%rlz%_crit_gain_dist	findcriticalgain, writecriticalgain, writedistcriticalgain
+.false. .false. .false. 150  						writeconductionufdist, writeconductionpwdist, writeTEufdist
+.false.    		151	out_aveTab.dat		  		writeaveTab
+.false. .false.   							writeEzyPW,  writeEzyUF
+.true.  .true.		164,5,6 out_pw_J,W_x,y.dat			find_dxy,  dzy_gain_resolved
+
+Convention:
+output files start with "out_" and end with ".dat"
+input files start with "quasi1d_rect_" and end with ".input"
+
+out_TmRm is different than out_Tm and out_Rm
+out_TmRm has nothing being written since all of its write statements are commented out
+if out_medium == .true., then the selected medium scatterer positions are written to file. Useful for plotting what the medium actually looks like
+
+"finish" is a status marker. If running on remote boxes (Windows cluster, NIC cluster), it can sometimes be hard to tell whether a run has completed.
+when finish == .true., then a file is written to the directory. If finish = .false., then no file is written
+
+
+"out_scatteringMatrix" == .true. is for examining the contents of the scattering matrix, related to single scatterer analysis in comparison to analytical matlab model

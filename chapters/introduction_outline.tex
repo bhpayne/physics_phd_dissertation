@@ -1,0 +1,144 @@
+\documentclass[pdftex]{article}
+
+% margins of 1 inch:
+\setlength{\topmargin}{-.5in}
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+
+%\DeclareRobustCommand{\baselinestretch{2.2}}
+
+\usepackage[pdftex]{hyperref}
+\usepackage[dvips]{graphicx,color}
+%\usepackage{graphicx}
+\usepackage{amsmath} % advanced math
+\usepackage{verbatim} % multi-line comments
+%\usepackage{appendix}
+%\usepackage[backref, colorlinks=false, pdftitle={371 class notes}, pdfauthor={Ben Payne}, pdfsubject={lecture notes}, pdfkeywords={story, notes, lecture, laser, 371}]{hyperref}
+
+\begin{document}
+Introduction outline: 
+
+Layout the major questions. Then address the answers. Finally, construct the logical flow of necessary statements. Each sentance should be defendable and contain well defined or cited jargon. 
+
+\section{these are the questions I want to address}
+
+\begin{itemize}
+ \item What field am I in?
+ \item Thesis statement: develop a criterion for AL/diffusion transition in active random media
+ \item Historically speaking, how did we get here?
+ \item When does AL versus diffusion occur?
+ \item What currently exist for criteria?
+ \item How are those criteria modeled numerically?
+ \item How do I plan on accomplishing the result desired in the thesis statement?
+\end{itemize}
+
+\section{this is how I will address the questions}
+Note: you are an expert, stick to the topic you are an expert on. 
+
+\begin{itemize}
+ \item What field am I in?
+ \begin{itemize}
+  \item Mesoscopic transport: ignore atomic-specific considerations, but small enough system that quantum effects are present (not bulk properties).  [cite]
+  \item light waves%, de Broglie waves
+  \item study of transition from diffusion to Anderson Localization [specifically not defining these yet.]
+  \item both are defined in passive media [cite], but we extend applicability to active media [ties to thesis statement]
+ \end{itemize}
+ \item Thesis statement: develop a criterion for AL/diffusion transition in active random media
+ \begin{itemize}
+  \item How? Develop numerical simulations  [cite PWA ``necessity of numerical sim'']
+  %\item Who will this help? Astronomy  [cite Chandrasekhar], Seismic [cite], electronic  [cite][ties to historical development]
+ \end{itemize}
+ \item Historically speaking, how did we get here?
+ \begin{itemize}
+%   \item electronic systems are described by (phenomenological) $V=IR$  [cite], where $R \propto L$. 
+%   \item very simple, even though lots of quantum effects occur in electron propagation and interaction
+%   \item can be microscopically derived from diffusion  [cite]
+%   \item invalid for certain experimental parameters  [cite metal-insulator transition]
+%   \item difference explained by self-interference of deBroglie waves [cite PWA 1958]
+  \item self-interference applies to any wave, including photonic
+  \item $g=T=\sum_{ab} |t_{ab}|^2$ [cite]
+  \item define diffusion [cite], AL [cite] [sets up clash of applicability]
+ \end{itemize}
+ \item When does AL versus diffusion occur?
+ \begin{itemize}
+  \item ballistic, diffusive, and localized regimes 
+  \item single parameter scaling says (any?) parameter is valid [cite]
+  \item passive, active systems, and why active is exception to single parameter scaling
+  \item (transition: need a way to characterize when an experiment is in a given regime)
+ \end{itemize}
+ \item What currently exist for passive criteria?
+ \begin{itemize}
+  \item single parameter scaling makes all passive criteria equivalent [cite]
+  \item D(z) [cite]
+  \item universal conductance fluctuations  [cite Genack]
+  \item correlation functions [cite]
+  \item Ioffe-Regel
+  \item Thouless
+ \end{itemize}
+ \item How are those criteria modeled numerically?
+ \begin{itemize}
+%   \item Anderson tight-binding Hamilton
+%   \item Green's functions 
+%   \item RMT
+  \item transfer matrix method, renormalization
+ \end{itemize}
+ \item How do I plan on accomplishing the result desired in the thesis statement?
+ \begin{itemize}
+  \item 1D alternating dielectric material numerical model
+  \item quasi-1D active randomly-placed scatterers numerical model
+  \item regimes plot
+ \end{itemize}
+\end{itemize}
+
+\section{detailed logic flow}
+\begin{itemize}
+ \item What field am I in?
+ \begin{itemize}
+  \item Mesoscopic transport is defined \cite{2005_Duan_Guojun} %page 251 
+   as the length scale on which atom and molecular considerations are ignored, but small enough system that quantum effects such as phase coherence are present (i.e., bulk properties of material are not present).  
+  \item Of interest in this dissertation, propagation of light waves the self-interference thereof in media with randomly-placed scatterers. The mesocopic scale is important because the coherence length, over which phase is is not altered, is longer than system length $L$.
+  \item At this scale, we study of transition from diffusion to Anderson Localization 
+  \item define diffusion [cite], AL [cite] [sets up clash of applicability]
+  \item Both AL and diffusion are defined in passive media [cite], but we extend applicability to active media [ties to thesis statement]
+ \end{itemize}
+ \item The purpose here is to develop a criterion for AL/diffusion transition in active random media [Thesis statement]
+ \begin{itemize}
+  \item To do this, numerical simulations are developed. [\cite{1977_Anderson_nobel} ``one has to resort to the indignity of numerical simulations to settle even the simplest questions about it.'']
+ \end{itemize}
+ \item Historically speaking, how did we get here?
+ \begin{itemize}
+  \item Although AL was initial developed in the context of self-interference of de Broglie waves, the concept applies to any wave, including light waves.
+  \item The relation between unitless conductance and transmission is $g=T=\sum_{ab} |t_{ab}|^2$ \cite{1998_Brouwer}
+ (transition?)
+ \end{itemize}
+ \item When does AL versus diffusion occur?
+ \begin{itemize}
+  \item ballistic ($\ell_{scat}$), diffusive ($\ell_{tmfp}$), and localized ($\xi$) regimes 
+  \item single parameter scaling says (any?) parameter is valid \cite{1979_Anderson}
+  \item passive, active systems, and why active is exception to single parameter scaling
+  \item (transition: need a way to characterize when an experiment is in a given regime)
+ \end{itemize}
+ \item What currently exist for passive criteria?
+ \begin{itemize}
+  \item single parameter scaling makes all passive criteria equivalent \cite{1979_Anderson}
+  \item D(z) \cite{1980_Vollhardt_Wolfle}
+  \item universal conductance fluctuations \cite{2000_chabanov_nature}
+  \item correlation functions [cite ]
+  \item Ioffe-Regel \cite{1960_Ioffe_criterion}
+  \item Thouless \cite{1977_Thouless}
+ \end{itemize}
+ \item How are those criteria modeled numerically?
+ \begin{itemize}
+  \item transfer matrix method, renormalization
+ \end{itemize}
+ \item How do I plan on accomplishing the result desired in the thesis statement?
+ \begin{itemize}
+  \item 1D alternating dielectric material numerical model
+  \item quasi-1D active randomly-placed scatterers numerical model
+  \item regimes plot
+ \end{itemize}
+\end{itemize}
+
+
+\end{document}

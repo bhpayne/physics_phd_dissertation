@@ -1,0 +1,206 @@
+\documentclass[12pt]{report} %{book}
+%\usepackage[pdftex]{hyperref}
+\usepackage[dvips]{graphicx,color}
+%\usepackage{graphicx}
+\usepackage{amsmath} % advanced math
+\usepackage{amssymb}
+\usepackage{verbatim} % multi-line comments
+\usepackage[backref, colorlinks=false, pdftitle={Questions to answer prior to exam}, 
+pdfauthor={Ben Payne, Alexey Yamilov}, pdfsubject={meeting}, 
+pdfkeywords={localization, gain, transmission, random, media}]{hyperref}
+%\usepackage{hyperref} % hyper links
+%I'd like to use "backpageref" instead of linking back to section numbers
+\setlength{\topmargin}{-.5in}
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\begin{document}
+ 
+
+
+Primary question to answer with dissertation:
+
+When do wave interference phenomena become dominant in active random media (instead of particle behavior)? More specifically, what measurable parameters indicate Anderson Localization in active disordered media?
+
+Q: Abaronov-Bohm effect occurs at mesoscopic scales. Do your models include it? \\
+A: No, Abaronov-Bohm effect is for electrons and magnetic field. We do not account for magnetic field because we are interested in light.
+
+Q: why is $Tr(tt^+)$ a popular quantity for transport theory?
+A: transmission matrix $t$ is not Hermitian or Unitary, whereas $tt^+$ is hermitian. See 20091117\_dr\_yamilov\_mtg\_eigenvalues.pdf
+
+Q: band diagrams, pass band/forbidden band? \\
+A: I have no experience in that language. Perhaps because that language applies only to periodic structures?
+
+Q: what determines $\omega=1$? AKA, how to translate numerical model to real frequencies?
+
+Q: What about Kramers-Kronig?
+http://en.wikipedia.org/wiki/Kramers\%E2\%80\%93Kronig\_relation
+http://en.wikipedia.org/wiki/Dispersion\_(optics)
+
+Q: Which specific scientific communities benefit from this work? \\
+A: First, the primary domain within both Condensed Matter and Optics is passive Anderson Localization. 
+
+Due to the main objective being photonic in nature, but electronic systems will also benefit. Any random scattering involving wave interference
+\begin{itemize}
+\item fog/cloud 
+\item stellar atmosphere
+\item intersteller clouds (Chandrasekhar)
+\end{itemize}
+
+Q: why not use the radiative transfer equation? 
+A: mean free path is an input. By starting from Maxwell's equations, we make no assumption about mfp
+
+Q: why is this model an improvement over established theories?
+A: [cite Brouwer PRB v53 1490] DMPK (based on Fokker-Plank] and supersymmetry of Efetov and Larkin have $L$, $\ell_{tmfp}$, $N_{open}$, and symmetry class indices $\beta=1,2,4$ as parameters. In comparison, our numerical model has only $L$, $N_{open}$ (only one symmetry class, no $\ell_{tmfp}$) and optional $N_{closed}$.
+
+Q: what is the relation between channel resolved transission and spatially resolved transmission and the angular distribution? How does one translate from $T_{ab}$ to $T_{y,y'}$? 
+
+Q: what other types of localization are there?
+A: 
+\begin{itemize}
+\item Lifshitz Localization
+\item Mott insulators \cite{2003_Kettemann} have a metal-insulator transition (creating a gap in energy spectrum) but it is not localization (page 1). Mott MIT is due to electron-electron coulomb interaction, whereas AL is due to disorder.
+\end{itemize}
+And not localization: 
+\begin{itemize}
+\item forbidden energy bands in crystalline solids. Exponential decay of incident waves, but not states are confined in the medium
+\item local defects in otherwise crystaline solids at photonic band gap are exponentially confined states, but not due to self-interference?
+\end{itemize}
+
+Q: How was the appropriate effective scatterer density (M,L,W, $\alpha$) determined to find the desired $\ell_{tmfp}$?
+
+Q: how was appropriate gain range for each geometry found? \\
+A: Method 1: automated critical gain search: increment gain until T decreases (non-physical) or $T>1000$. From that, desired absorption is symmetrically valued (-gain). \\
+Method 2: 
+
+Q: you've shown det(F)=1 for free space and scattering matrices. Does that apply in other basis such as incoming-outgoing in addition to left-right?
+
+
+Q: det(F)=1 means what physically?  \\
+A: in passive media, I thought it meant conservation of flux. But since it works for active media, then what?
+
+Q: why not use existing commercial software for waveguide modeling? \\
+A: would need to be able to model active random media with arbitrary scattering potentials for long ($L>>\xi$) waveguides. If the code existed, it would be nice to be open source so that we could inspect its operation for correctness. The reason this code does not exists is (1) no one has done this before (2) it wasn't possible to do before without self-embedding, developed by Dr Yamilov.
+
+Q: why random incident phase?\\
+A: to avoid matched phase build-up at $z=0$, $y=0$ (for phase=0).
+
+Q: why constant random incident phase (over multiple realizations)?\\
+A: To separate ballistic and diffusive components, we need to simulate scanning a beam (with constant phase) across a slab (many rlz). See notes 20100609.
+
+Q: Are the free, scattering, transfer matrices for passive media symmetric, hermitian, orthogonal, unitary, or normal? How does that change when the medium is active?
+A: see SVN:/research/quasi1d/quasi1d\_paper\_folding\_closed\_channels/derivation/quasi1d\_derivation \\
+\begin{itemize}
+\item Neither free space nor scatterer matrices are symmetric
+\item The free space matrix is $\Re$ if $N_{closed}=0$
+\item Free space matrix doesn't depend on $\alpha$
+\item Scattering matrix is $\Re$ if $\alpha \in \Re$, and is complex if $\alpha$ is complex
+\item When a matrix is real and not symmetric, that implies the product is not Hermition (i.e., for $\alpha$ complex or $N_{closed}>0$.
+\item it can be shown that the scattering matrix is not any of \{symmetric,hermitian,orthogonal,unitary,normal\}
+\end{itemize}
+
+Q: Isn't RMT based on the transfer matrix being unitary?
+
+\section{self-embedding}
+Q: verbally describe how self-embedding works to renormalize the divergent eigenvalues in the product.
+
+Q: How does the numerical inaccuracy scale? When can I expect to need self-embedding for a given rank? 
+
+Q: Does complex elements make a difference with respect to accuracy and how often self-embedding is required?  
+A: in practice, no. [why not?]
+
+Q: What about increasing the number of significant digits in your F90 program to counter the rounding problem?
+
+Q: how does self-embedding maintain flux conservation? How does the renormalization not screw up the magnitude.
+
+\section{scatterers}
+How does the distribution at scatterers depend on $y_0$?
+
+\section{general transport}
+Q: What is the difference between conductance, conductivity, transmission?
+A: G, g for electricity; T, t for light. The reason for the distinction is that g,G is averaged over all channels, whereas experiments with light can be channel resolved.
+
+
+A questions I expect to arise is the effect of noise (spontaneous emission) and why we do not include it in our model. (Jon Anderson created a model with noise.) 
+Q: Since it is universally present in optical experiments, how do we justify neglecting noise?
+Q: could it be added to the current F90 model?
+Q: how can we claim our numerical model results will be useful to experimentalists if they do not include noise?
+
+
+Q: How does scatterer being complex lead to active media?
+A: Plane wave: $E = e^{i(kx-\omega t}$. If $k$ is complex, then $E = e^{i(Re(k)x-\omega t}e^{-Im(k)x}$. Thus the wave can grow or decrease exponentially, depending on the sign of the imaginary part of $k$.
+
+
+Q: Given the energy before a scatterer, what is the energy after the scatterer? How does it depend on scatterer strength? \\
+?A? In the passive media, energy decreases with the number of scatterers. That energy loss mechanism has three mechanisms: open channels, closed channels, and complex scatterers (active media).  There is energy loss in passive media, but we don't call that absorption.
+
+closed channels have $i \kappa$. when plugged into $E(r,\omega)$ this results in a real exponential power. Whereas for real $k$, the power is imaginary, which is equivalent to trig functions.
+
+
+Q: what the the dependence on randomness? (How does transport change as the media is changed from purely random to an ordered array?)
+Q: what is the effect of minimum separation on transport?
+
+Q: what is weak localization? enhanced backscattering? 
+Q: what is the difference between strong and weak localization?
+
+Q: In finite systems, how are ballistic, localized, and diffusive regimes differentiated?
+
+
+Q: [Dr Parris]: how does presence of scatterers change hamiltonian? 
+A: see Bagwell 1990 derviation
+
+
+[Dr Parris] Why is the numerical model I use different/superior to other models, such as Anderson tight-binding? \\
+Q: what are the advantages/disadvantages to your model, in comparison to Random Matrix Theory, Anderson's tight-binding Hamiltonian, the Self-Consistant theory of localization, Green's functions, and diagramatic theory?
+
+A: [from lab\_notes/20091022\_ben\_simple\_equations.log]
+It is the goal of Random Matrix Theory, Anderson's tight-binding Hamiltonian, and the Self-Consistant theory of localization to develop simple mathematical models that produce phenomena that agree at least qualitatively with experiments wrt transport. 
+
+Our ``simple set of equations'' are Maxwell's equations. They are well understood, well tested, and are expected to give rise to wave transport-based phenomena. [In that respect, we have less to worry about with respect to how well our model matches experiment?]
+
+Q: How did Dr Yamilov make an ultrasonic laser? Sound is longitudinal, light is tranverse waves.
+
+We avoid perturbations, but we do use approximations/assumptions (randomly spaced delta-function scattering potentials, E=0 at boundaries). 
+
+
+
+Q: I though Anderson't tight-binding Hamiltonian was exact and that AL was solved a long time ago. Why are you still working on it? \\
+(Dr Parris) What is it about Anderson Localization that is not understood? Why are people still working on this after 50 years?
+
+
+Q: for quasi-1D and 1D model, why do only E and E' need to match at boundaries?
+A: We expect there to be two solutions: left and right travelling waves ($t$ and $r$). Two other basis are equivalent: outgoing versus incoming, and field and derivative.
+
+
+Q: Why are transfer matrices multiplied instead of added? \\
+A: Multiplication signifies ``and,'' whereas addition signifies ``or.'' Verbally, the propagating wave field is incident on the first scatterer, \textit{and} then the second, \textit{and} then the third. The wave field does \textit{not} hit the first scatterer \textit{or} the second \textit{or} the third.
+
+
+Q: Why neglect B field?
+
+
+Q: $\ell_{tmfp}$ and $\ell_{mfp}$ are different, but how does ``elastic mean free path'' fit in?
+
+
+Q: Why do we expect exponential decay? \\
+A: The amount lost depends on how much one has for a given position
+
+
+In the diffusive regimes, loops are negligable. In the localized regime, ($k \ell_{tmfp}=1$), loops are present. Wouldn't constructive and destructive interference contributions be equivalent? ie, loops are present, but they remove as much as they add. 
+
+
+***************************
+Generally applicable ******
+***************************
+
+What assumptions have been made?
+
+What older theories are you applying (ie DMPK, Maxwell equ), and what are their assumptions?
+
+How close do the results match experiment?
+
+What is this useful for?
+
+What is your goal, short term and long term?
+
+\end{document}

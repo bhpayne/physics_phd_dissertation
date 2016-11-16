@@ -1,0 +1,107 @@
+\chapter{\texorpdfstring{Relation of $T/{\cal E}$}{T/E} to \texorpdfstring{$D(z)$}{D(z)}} %  From Self-consistent Theory of Anderson Localization
+\label{sec:appendix_TE_Dz_relation}
+
+% see also lab notebook SVN 20091230_ben_transmission_energy_derivations
+% Note: a significant amount of content was barrowed from /svn/research/oned/TE\_paper
+
+This is an expansion of Appendix section~\ref{app:Dz_derivation}. As in that section we assume a slab geometry. The $z$ coordinate normal to the slab is separated from the perpendicular component ${\bf \rho}$ as ${\bf r}=({\bf \rho},z)$. Again assuming no dependence on ${\bf \rho}$ allows us to give the ensemble-averaged diffusive flux $\langle\vec{J}(\vec{r},t)\rangle$ and the energy density $\langle {\cal W}(\vec{r},t)\rangle$ are related via \cite{1953_Morse}
+\begin{equation}
+\langle\vec{J}(\vec{r},t)\rangle=-D(\vec{r})\vec{\nabla}\langle {\cal W}(\vec{r},t)\rangle
+\label{eq:Jflux_relation}
+\end{equation}
+The diffusion approximation amounts to $D(\vec{r})\equiv D_0=c\ell_{tmfp}/3$, where $c$ is the speed of light and $\ell_{tmfp}$ is the transport mean free path.
+
+We consider a 3D random medium in a shape of a slab of thickness $L$, where we explicitly  separate the coordinate $z$ normal to the slab from the perpendicular component ${\bf \rho}$ as ${\bf r}=({\bf \rho},z)$. Under a CW plane-wave illumination at normal incidence, the dependence on ${\bf \rho}$ and $t$ can be neglected. 
+\begin{equation}
+\langle\vec{J}_z(z)\rangle=-D(z)\frac{d}{dz}\langle {\cal W}(z)\rangle
+\end{equation}
+
+Integration over $z$ gives
+\begin{equation}
+\int_z^L\frac{\langle J_z(z^\prime)\rangle dz^\prime}{D(z^\prime)}=-\langle {\cal W}(L)\rangle + \langle {\cal W}(z)\rangle
+\label{eq:E1_relation}
+\end{equation}
+where the energy stored inside the random medium ${\cal E}$ is formally defined as
+\begin{equation}
+\langle {\cal E} \rangle =\int_0^L\langle {\cal W}(z)\rangle dz.
+\label{eq:Energy_definition_relation}
+\end{equation}
+thus
+\begin{equation}
+\langle {\cal E} \rangle = \int_0^L \left( \langle {\cal W}(L)\rangle + \int_z^L\frac{\langle J_z(z^\prime)\rangle }{D(z^\prime)}dz^\prime\right) dz
+\end{equation}
+The remaining work is to factor out transmission $T$ in order to find the relation between $T/{\cal E}$ and $D(z)$. The energy density $\langle {\cal W}(L)\rangle$ at the right boundary can be expressed in terms of right- and left-propagating fluxes. From the definition of diffusive flux \cite{1953_Morse}
+\begin{equation}
+\langle J_{\pm}(z)\rangle = \frac{c}{4} \langle {\cal W}(z)\rangle \mp \frac{D_0}{2} \frac{d\langle {\cal W}(z)\rangle }{dz}
+\label{eq:diffusive_flux_relation}
+\end{equation}
+where $ \langle J_{-}\rangle$ and $ \langle J_{+}\rangle $ are the fluxes propagating along negative and positive $z$-directions respectively. Since $\langle J_+(L)\rangle=J_0T$ and $\langle J_-(L)\rangle=0$, using Eqs.~\ref{eq:diffusive_flux_relation} to eliminate $D_0$ yields
+\begin{equation}
+\langle J_+(L)\rangle + \langle J_-(L)\rangle = 2 \frac{c}{4}\langle {\cal W}(L)\rangle
+\end{equation}
+Therefore $\langle {\cal W}(L)\rangle=2J_0T/c$ and the energy can be re-written as
+\begin{equation}
+\langle {\cal E} \rangle = \int_0^L \left( 2J_0T/c + \int_z^L\frac{\langle J_z(z^\prime)\rangle}{D(z^\prime)}dz^\prime\right) dz
+\end{equation}
+Next, we reduce $\langle J_z(z^\prime)\rangle$ to find an approximately equivalent transmission.
+
+%the boundary conditions are from Eq.~\ref{eq:Jflux_conserv}
+%\begin{equation}
+%J_z(z=0)=-J_0R,\ \, J_z(z=L)=J_0T
+%\label{eq:Jflux_bc}
+%\end{equation}
+
+In the CW regime when the energy density ${\cal W}(z)$ is stationary, $\partial \langle {\cal W}(z)\rangle/\partial t=0$, it follows from energy conservation condition for flux $\vec{J}$ and energy ${\cal W}$
+\begin{equation}
+\frac{\partial \langle {\cal W}(\vec{r},t)\rangle }{\partial t}+\vec{\nabla} \cdot \langle\vec{J}(\vec{r},t)\rangle=
+\frac{c}{\ell_g}\langle {\cal W}(\vec{r},t)\rangle+J_0 \delta(z-z_p)
+\label{eq:Jflux_conserv_relation}
+\end{equation}
+ that the $z$ component of flux is constant for $z>z_p\sim\ell$. The value of the constant can be obtained from the boundary condition at $z=L$ as
+\begin{equation}
+\langle J_z(z)\rangle=\left\{
+\begin{array}{l l}
+\langle J_z(L)\rangle\equiv J_0 \langle T \rangle ,&\quad z_p<z<L\\
+\langle J_z(0)\rangle\equiv -J_0 \langle R \rangle,&\quad 0<z<z_p\\
+\end{array} \right.
+\label{eq:Jfluxz_const_relation}
+\end{equation}
+where $T$ ($R$) is the transmission (reflection) coefficient. As a check, by integrating Eq.~(\ref{eq:Jflux_conserv_relation}) over the entire system we obtain the standard (passive) flux conservation $\langle J_z(L)\rangle -\langle J_z(0)\rangle =J_0 \langle T \rangle-(-J_0 \langle R \rangle)=J_0(\langle T \rangle+\langle R \rangle)=J_0$. To take advantage of the fact that $\langle J_z(z)\rangle$ is piecewise constant, c.f. Eq.~(\ref{eq:Jfluxz_const_relation}), we have to neglect by $0<z<z_p$ contribution. Then a constant can be substituted for $J_z(z')$,
+\begin{equation}
+\langle {\cal E} \rangle = \int_0^L \left( 2J_0\langle T \rangle/c + \int_z^L\frac{J_0 \langle T \rangle }{D(z^\prime)}dz^\prime\right) dz
+\end{equation}
+This introduces an error $\propto z_p/L\sim\ell/L\ll 1$. Factoring $T$ from the integrands,
+\begin{equation}
+\langle {\cal E} \rangle =J_0\langle T \rangle\int_0^L \left( \int_z^L\frac{dz^\prime}{D(z^\prime)}+2/c\right) dz
+\label{eq:E1a_relation}
+\end{equation}
+Note that the second term is of the same order $\sim \ell/L$ as the term omitted in arriving to the above expression. Hence, $2/c$ contribution has to be dropped as well.
+\begin{equation}
+\langle {\cal E} \rangle =J_0T\int_0^L \int_z^L \frac{1}{D(z^\prime)}dz^\prime dz
+\end{equation}
+
+Taking advantage of the system symmetry, $D(z)=D(L-z)$, the double integration can be further simplified as
+\begin{eqnarray}
+\displaystyle\int_{0}^{L}\int_{z}^{L}\displaystyle\frac{1}{D(z^\prime)}dz^\prime dz &=&\frac{1}{2}\displaystyle\int_{0}^{L}\int_{0}^{L}\displaystyle\frac{1}{D(z^\prime)}dz^\prime dz \nonumber\\
+&=&\frac{L}{2}\int_{0}^{L}\displaystyle\frac{1}{D(z)}dz.
+\label{eq:E3_relation}
+\end{eqnarray}
+After normalizing the integral so that it yields unity in the case when the wave interference effects are neglected, $D(z)=D_0\equiv c\ell/3$, for passive media
+\begin{equation}
+\frac{\langle T \rangle}{\langle {\cal E} \rangle}\simeq
+\frac{1}{J_0}
+\frac{2D_0}{L^2}
+\left(
+\displaystyle\frac{1}{L}\displaystyle\int_{0}^{L}\displaystyle\frac{D_0}{D(z)}dz
+\right)^{-1},
+\label{eq:TE_vs_D_relation}
+\end{equation}
+We note that in process of deriving Eq.~(\ref{eq:TE_vs_D_relation}), we dropped the terms on the order of $\sim\ell/L\ll 1$.
+
+
+Dropping the localization corrections leaves
+\begin{equation}
+\frac{\langle T \rangle}{\langle {\cal E} \rangle}\simeq \frac{1}{J_0} \frac{2D_0}{L^2}
+\label{eq:diffusion_te_only}
+\end{equation}
+Any deviation from Eq.~\ref{eq:diffusion_te_only} in passive diffusive media can be attributed to localization corrections.

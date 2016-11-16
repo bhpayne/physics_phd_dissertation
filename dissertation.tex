@@ -1,0 +1,192 @@
+\documentclass[chap]{mst_thesis}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{lscape}
+\usepackage{subfigure}
+\usepackage{flafter} % http://stackoverflow.com/questions/547508/in-latex-is-there-a-way-to-put-a-float-automatically-after-where-it-is-first-re
+\usepackage{makeidx} % added by Ben
+\makeindex
+%\usepackage{nomencl}
+%\usepackage[dvips]{graphicx,color}
+%\usepackage{amsmath} % advanced math
+%\usepackage{verbatim} % multi-line comments
+%\usepackage{appendix}
+% see http://www.tug.org/applications/hyperref/manual.html
+\usepackage[breaklinks=true, % allow links to break over lines by making links over multiple lines into PDF links to the same target 
+hyperindex, % Makes the page numbers of index entries into hyperlinks. 
+%backref, 
+%pagebackref, % Adds backlink text to the end of each item in the bibliography, as a list of page numbers. 
+linktocpage, % make page number, not text, be link on TOC, LOF and LOT 
+colorlinks=false, 
+pdftitle={Dissertation}, 
+pdfauthor={Ben Payne}, 
+pdfsubject={PhD dissertation}, 
+pdfkeywords={exam dissertation anderson localization random media gain}]{hyperref}
+\usepackage{glossary}
+\makeglossary  % http://texblog.wordpress.com/2007/11/01/glossary-in-latex/
+
+%\usepackage[left=1.5in,top=1in,right=1.25in,bottom=.3in]{geometry} %For the stupid, stupid margins
+\newcommand {\remline} {\vspace{-12pt}}
+\newcommand{\citenum}{\cite}
+
+
+% Use the first command below if you want captions over 1 line indented. A side
+% effect of this is to remove the use of bold for captions. To restore bold,
+% also include the second line below.
+\usepackage[hang]{caption}  
+% change the caption delimiter in caption2.sty from a colon to a period:
+%\renewcommand\captionlabeldelim{.}
+%\usepackage{hangcaption}
+
+% The following command will specify the correct graphics driver for the
+% graphics routines used with LaTeX.  Possible options include:
+% template, dvips, oztex, textures, dvialw, emtex, dvilaser, psprint,
+% dvipsone, dvi2ps, pctexps, pctex32, pctexwin, pctexhp, pubps,
+% dviwin, dvitops, ln, dvipsnames.
+\ExecuteOptions{textures}
+
+\newcommand{\boldnabla}{\mbox{\boldmath$\nabla$}}
+\newcommand{\boldrho}{\mbox{\boldmath$\rho$}}
+
+%\includeonly{MSTchap1}  % use \includeonly to process only
+                         % the file(s) listed inside the braces
+                         % separate more than one file with a comma
+\begin{document}
+% Leave the following lines alone:
+\addtocontents{toc}{\hfill Page}%for "Page" at top of TOC 
+\addtocontents{lof}{\noindent Figure \hfill Page}%for the Figures page
+\addtocontents{loa}{\noindent Algorithm \hfill Page}
+\addtocontents{lot}{\noindent Table \hfill Page}%for the Tables page
+\addtocontents{los}{\noindent \protect\makebox[1in][l]{\underline{Symbol}} \underline{Description} \hfill \\}%for the Symbols page 
+
+\include{chapters/title}      % title page material
+
+\include{chapters/abstract}   % abstract page
+\include{chapters/acknowledgements}        % acknowledgements page
+\tableofcontents     % table of contents (automatically generated)
+\listoffigures       % required if there are figures (automatically generated)
+%\listofalgorithms
+\listoftables        % required if there are tables (automatically generated)
+\nomenclature        % required if there are variables (automatically generated
+                     % if you use the \symbol command)
+%\include{chapters/appendix_symbols_used}
+
+% Leave the following line alone:
+\addtocontents{toc}{\parindent0pt\vskip12pt SECTION} %toc entry
+
+% note: each included file should start with \section{X}
+\include{chapters/introduction_draft3}
+
+% \PaperManuscript{1}{Relation between transmission and energy stored in random media with gain}
+%Phys. Rev. B 82 104204 (2010) doi:10.1103/PhysRevB.82.104204
+%/svn/research/Project_1D_Transport/2010_TE_manuscript/2009_TE_prb.tex
+% pictures from
+%/svn/research/Project_1D_Transport/2010_TE_manuscript/20100115_submission
+% \setcounter{section}{0}
+% \setcounter{figure}{0}
+% \setcounter{table}{0}
+\label{paper:1_start} % this label ends up on the page prior
+\input{chapters/Relation_between_transmission_and_energy_stored_in_random_media_with_gain__Phys_Rev_B/2009_TE_prb}
+\label{paper:1_end}
+
+% \PaperManuscript{2}{Classification of regimes of wave transport in \-non-\-con\-servative random media}
+%Journal of Modern Optics (2010) doi:10.1080/09500340.2010.519443
+% /svn/research/Project_Quasi1D_Transport/2010_Regimes_Plot_manuscript/2010_JMO/20100712_regimes_plot.tex
+% \setcounter{section}{0}
+% \setcounter{figure}{0}
+% \setcounter{table}{0}
+\label{paper:2_start}
+\input{chapters/Classification_of_regimes_of_wave_transport_in_non-conservative_random_media__J_Mod_Optics/20100712_regimes_plot}
+\label{paper:2_end}
+
+
+% \PaperManuscript{3}{Near-field effects in wave transport through in disordered waveguides}
+% to be submitted
+% /svn/research/Project_Quasi1D_Transport/2012_Closed_Channels_manuscript/
+% \setcounter{section}{0}
+% \setcounter{figure}{0}
+% \setcounter{table}{0}
+\label{paper:3_start}
+\input{chapters/Near-field_effects_in_wave_transport_through_in_disordered_waveguides/quasi-1D_near-field_effects}
+\label{paper:3_end}
+% 
+% % \PaperManuscript{4}{Anderson Localization as position-dependent diffusion in disordered waveguides}
+% % Phys. Rev. B 82, 024205 (2010) doi:10.1103/PhysRevB.82.024205
+% % /svn/research/Project_Quasi1D_Transport/2010_Dofz_manuscript/quasi1d_dofz_prb.tex
+% % \setcounter{section}{0}
+% % \setcounter{figure}{0}
+% % \setcounter{table}{0}
+\label{paper:4_start}
+\input{chapters/Anderson_Localization_as_position-dependent_diffusion_in_disordered_waveguides__Phys_Rev_B/quasi1d_dofz_prb}
+\label{paper:4_end}
+% 
+% % \PaperManuscript{5}{Mapping algorithm from the two-dimensional aperiodic Thue-Morse structure to the square lattice}
+% % to be submitted
+% % /svn/research/Project_DAS/2012_Mapping_2D_TM_manuscript
+% % \setcounter{section}{0}
+% % \setcounter{figure}{0}
+% % \setcounter{table}{0}
+\label{paper:5_start}
+\input{chapters/Mapping_algorithm_from_the_two-dimensional_aperiodic_Thue-Morse_structure_to_the_square_lattice/mapping_2D_TM}
+\label{paper:5_end}
+% 
+% % \PaperManuscript{6}{2D Thue-Morse array of optical cavities: tight-binding model}
+% % to be submitted
+% % /svn/research/Project_DAS/2012_TB_for_2DTM_manuscript
+% % \setcounter{section}{0}
+% % \setcounter{figure}{0}
+% % \setcounter{table}{0}
+\label{paper:6_start}
+\input{chapters/2D_Thue-Morse_array_of_optical_cavities_tight-binding_model/TB_for_2DTM}
+\label{paper:6_end}
+
+%\end{ThesisPublications}
+
+%\begin{ThesisBackMatter}
+\input{chapters/conclusion}
+
+
+% Leave the following two lines alone:
+\appendix            % This command is used only once!
+                     % It resets the formatting for the appendices.
+%\include{chapters/appendix_layman_overview}
+\include{chapters/appendix_lengths}
+\include{chapters/appendix_q1d_transfer_matrix_derivation}
+\include{chapters/appendix_te_dz_relation}
+
+%\include{chapters/appendix_1d_transfer_matrix_and_AB_derivation}
+%\include{chapters/appendix_1d_energy_in_one_slab_derivation}
+%\include{chapters/appendix_alpha_beta_convention}
+%\include{chapters/appendix_q1d_single_scatterer_derivation}
+%\include{chapters/appendix_q1d_double_scatterer_derivation}
+%\include{chapters/appendix_open_closed_channel_folding}
+%\include{chapters/appendix_self-embedding_derivation}
+%\include{chapters/appendix_transmission_derivation}
+
+\specialhead{BIBLIOGRAPHY}
+\remline
+%\singlespace
+\bibliography{../../research/Bibliography/latex_bibliography}
+%%%\bibliographystyle{abbrv}  % numbered alphabetical list
+\bibliographystyle{unsrt} % in order to citation
+
+%\addcontentsline{toc}{chapter}{VITA}
+\include{chapters/vita}
+
+\newpage 
+\printglossary
+% make sure the glossary shows up in table of contents:
+\addcontentsline{toc}{chapter}{Glossary}
+
+\newpage
+\printindex
+\addcontentsline{toc}{chapter}{Index}
+
+\end{document}

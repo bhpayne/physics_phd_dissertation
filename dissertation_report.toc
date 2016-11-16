@@ -1,0 +1,98 @@
+\select@language {american}
+\contentsline {chapter}{PUBLICATION DISSERTATION OPTION}{iii}{chapter*.1}
+\contentsline {chapter}{ABSTRACT}{iv}{chapter*.2}
+\contentsline {chapter}{ACKNOWLEDGMENTS}{v}{chapter*.3}
+\contentsline {chapter}{LIST OF ILLUSTRATIONS}{xi}{chapter*.4}
+\contentsline {chapter}{LIST OF TABLES}{xiv}{chapter*.5}
+\vspace {4ex}
+\hbox to \textwidth {{}\hspace *{-2mm}{\bf SECTION\ \hfill }}
+\contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}MESOSCOPIC LIGHT TRANSPORT}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}CRITERIA FOR DIFFUSION-LOCALIZATION TRANSITION}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}PASSIVE CRITERIA CURRENTLY AVAILABLE}{4}{section.1.3}
+\contentsline {section}{\numberline {1.4}$T/{\cal E}$ AS DIFFUSION-LOCALIZATION CRITERION}{6}{section.1.4}
+\contentsline {section}{\numberline {1.5}METHOD OF STUDY OF CRITERIA FOR DIFFUSION- LOCALIZATION TRANSITION}{7}{section.1.5}
+\contentsline {section}{\numberline {1.6}OUTLINE OF TRANSPORT REGIMES}{13}{section.1.6}
+\contentsline {chapter}{\numberline {2}Relation between transmission and energy stored in \\random media with gain}{19}{chapter.2}
+\contentsline {section}{ABSTRACT}{19}{section*.11}
+\contentsline {section}{\numberline {2.1}INTRODUCTION}{20}{section.2.1}
+\contentsline {section}{\numberline {2.2}ANALYSIS OF $T/{\cal E}$: DIFFUSIVE REGIME}{22}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Model Description}{22}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Asymptotic Behavior of $T/{\cal E}$: Passive System Limit}{24}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Asymptotic Behavior of $T/{\cal E}$: Strong Gain Limit}{25}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Intermediate Gains}{26}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}ANALYSIS OF $T/{\cal E}$: LOCALIZED REGIME}{31}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Model Description}{31}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Correlations Between $\mathaccentV {tilde}07E{T}$ and $\mathaccentV {tilde}07E{\cal E}$}{32}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Behavior of $\mathaccentV {tilde}07E{T}/\mathaccentV {tilde}07E{\cal E}$ in Passive Random Medium: Spectral Vicinity of a Resonance}{37}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Behavior of $\mathaccentV {tilde}07E{T}/\mathaccentV {tilde}07E{\cal E}$ in Active Random Medium}{41}{subsection.2.3.4}
+\contentsline {section}{\numberline {2.4}DISCUSSION AND OUTLOOK}{47}{section.2.4}
+\contentsline {section}{\numberline {2.5}ACKNOWLEDGMENTS}{48}{section.2.5}
+\contentsline {section}{\numberline {2.6}APPENDIX}{49}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Derivation of Equation~(\ref {eq:TE_vs_D})}{49}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Dependence of $\mathaccentV {tilde}07E{T}/\mathaccentV {tilde}07E{\cal E}$ on Position of the Defect State: Non-random Model}{50}{subsection.2.6.2}
+\contentsline {chapter}{\numberline {3}Classification of regimes of wave transport in \\quasi one-dimensional non-conservative random media}{53}{chapter.3}
+\contentsline {section}{ABSTRACT}{53}{section*.21}
+\contentsline {section}{\numberline {3.1}INTRODUCTION}{54}{section.3.1}
+\contentsline {section}{\numberline {3.2}LOCALIZATION IN QUASI-1D NON- CONSERVATIVE RANDOM MEDIA}{55}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Localization in Finite Passive Random Media}{55}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Localization in Finite Random Media With Gain or Absorption}{55}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Disordered Waveguide (Wire) Geometry}{57}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}DEFINITIONS OF PARAMETERS IN QUASI-1D NON- CONSERVATIVE RANDOM MEDIA}{58}{section.3.3}
+\contentsline {section}{\numberline {3.4}``PHASES'' OF WAVE TRANSPORT THROUGH \\NON-\discretionary {-}{}{}CONSERVATIVE RANDOM MEDIA}{61}{section.3.4}
+\contentsline {section}{\numberline {3.5}DISCUSSION AND OUTLOOK}{63}{section.3.5}
+\contentsline {section}{\numberline {3.6}ACKNOWLEDGMENTS}{64}{section.3.6}
+\contentsline {chapter}{\numberline {4}Near-field effects in wave transport through in disordered waveguides}{65}{chapter.4}
+\contentsline {section}{ABSTRACT}{65}{section*.25}
+\contentsline {section}{\numberline {4.1}INTRODUCTION}{65}{section.4.1}
+\contentsline {section}{\numberline {4.2}ANALYTICAL RENORMALIZATION OF SCATTERERS WITH \\EVANESCENT CHANNELS}{68}{section.4.2}
+\contentsline {section}{\numberline {4.3}RENORMALIZATION OF SCATTERING LENGTH DUE TO \\EVANESCENT CHANNELS}{70}{section.4.3}
+\contentsline {section}{\numberline {4.4}NUMERICAL SIMULATION MODEL DESCRIPTION}{74}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Effective Refractive Index}{75}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Transfer Matrices}{76}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Self-Embedding}{77}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5}NUMERICAL SIMULATION RESULTS}{78}{section.4.5}
+\contentsline {section}{\numberline {4.6}CONCLUSION}{82}{section.4.6}
+\contentsline {chapter}{\numberline {5}Anderson localization as position-dependent diffusion in disordered waveguides}{84}{chapter.5}
+\contentsline {section}{ABSTRACT}{84}{section*.31}
+\contentsline {section}{\numberline {5.1}INTRODUCTION}{85}{section.5.1}
+\contentsline {section}{\numberline {5.2}SELF-CONSISTENT THEORY OF LOCALIZATION}{86}{section.5.2}
+\contentsline {section}{\numberline {5.3}NUMERICAL MODEL}{92}{section.5.3}
+\contentsline {section}{\numberline {5.4}POSITION-DEPENDENT DIFFUSION COEFFICIENT}{94}{section.5.4}
+\contentsline {section}{\numberline {5.5}EFFECT OF ABSORPTION}{96}{section.5.5}
+\contentsline {section}{\numberline {5.6}CONCLUSIONS}{97}{section.5.6}
+\contentsline {section}{\numberline {5.7}ACKNOWLEDGMENTS}{99}{section.5.7}
+\contentsline {chapter}{\numberline {6}Mapping algorithm from the two-dimensional aperiodic Thue-Morse structure to the square lattice}{100}{chapter.6}
+\contentsline {section}{ABSTRACT}{100}{section*.35}
+\contentsline {section}{\numberline {6.1}INTRODUCTION}{101}{section.6.1}
+\contentsline {section}{\numberline {6.2}MAPPING MICRO-CAVITIES IN 2D THUE-MORSE ARRAY ONTO SQUARE LATTICE}{102}{section.6.2}
+\contentsline {section}{\numberline {6.3}EXHAUSTIVE ENUMERATION OF INTER-CAVITY ARRANGEMENTS}{104}{section.6.3}
+\contentsline {section}{\numberline {6.4}DESCRIPTION OF MATLAB CODE}{106}{section.6.4}
+\contentsline {section}{\numberline {6.5}CONCLUSION}{108}{section.6.5}
+\contentsline {section}{\numberline {6.6}ACKNOWLEDGEMENTS}{109}{section.6.6}
+\contentsline {chapter}{\numberline {7}2D THUE-MORSE ARRAY OF OPTICAL CAVITIES: TIGHT-BINDING MODEL}{110}{chapter.7}
+\contentsline {section}{ABSTRACT}{110}{section*.39}
+\contentsline {section}{\numberline {7.1}INTRODUCTION}{110}{section.7.1}
+\contentsline {section}{\numberline {7.2}STRUCTURE DESIGN AND OPTIMIZATION}{113}{section.7.2}
+\contentsline {section}{\numberline {7.3}TIGHT BINDING ANALYSIS}{116}{section.7.3}
+\contentsline {section}{\numberline {7.4}CONCLUSIONS}{121}{section.7.4}
+\contentsline {section}{\numberline {7.5}ACKNOWLEDGMENTS}{122}{section.7.5}
+\contentsline {chapter}{\numberline {8}CONCLUSIONS}{123}{chapter.8}
+\contentsline {section}{\numberline {8.1}CHARACTERIZATION OF TRANSPORT REGIME TRANSITIONS IN NON-CONSERVATIVE RANDOM MEDIA}{123}{section.8.1}
+\contentsline {section}{\numberline {8.2}ANALYSIS OF DETERMINISTIC APERIODIC STRUCTURES}{124}{section.8.2}
+\setcounter {tocdepth}{0}
+\vspace {4ex}
+\hbox to \textwidth {{} \hspace *{-2mm}{{\bf APPENDICES} \ \hfill }}
+\contentsline {chapter}{\numberline {A}Characteristic Length Scales}{126}{appendix.A}
+\contentsline {chapter}{\numberline {B}Transfer Matrices for Electric Field Propagation}{128}{appendix.B}
+\contentsline {section}{\numberline {B.1}Time Independent Wave Equation}{130}{section.B.1}
+\contentsline {section}{\numberline {B.2}Separation of Variables}{130}{section.B.2}
+\contentsline {section}{\numberline {B.3}Perpendicular Component Solution}{131}{section.B.3}
+\contentsline {section}{\numberline {B.4}Parallel Component Solution}{132}{section.B.4}
+\contentsline {section}{\numberline {B.5}Waveguide With Scatterers}{133}{section.B.5}
+\contentsline {section}{\numberline {B.6}Free Space Propagation of Open Channels}{135}{section.B.6}
+\contentsline {section}{\numberline {B.7}Free-space Propagation of Closed Channels}{137}{section.B.7}
+\contentsline {chapter}{\numberline {C}Relation of $T/{\cal E}$ to $D(z)$}{139}{appendix.C}
+\setcounter {tocdepth}{4}
+\contentsline {chapter}{BIBLIOGRAPHY}{144}{appendix*.48}
+\contentsline {chapter}{VITA}{158}{appendix*.49}
